@@ -23,7 +23,7 @@ The script will search your page for `pre` tags with the class
     _ _ ka na _ ka _ sa _ bē _ _ śan _
     _ _ க ன _ க _ ச _ பே _ _ சன் _
 
-    R S  , , S  , , S  , S   , , N   , 
+    R S  , , S  , , S  , S   , , N-   , 
     _ da _ _ ri _ _ sa _ nam _ _ kaṇ _
     _ த _ _ ரி _ _ ச _ னம் _ _ கண் _
 
