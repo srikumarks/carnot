@@ -99,12 +99,12 @@ Example:
 1. `tala pattern = || , , , , | , , | , , ||` 
 2. `tala pattern = || ,, ,, ,, | ,, ,, | ,, ,, ||`
 
-## aksharas per line
+### aksharas per line
 
 The value of this property is expected to be a natural number greater than 0.
 It specifies how many of the tala aksharas a line should occupy. 
 
-## stretch
+### stretch
 
 Give a floating point value that will horizontally stretch the spacing used in
 the rendering. A value of "2.0" will be twice as wide as a value of "1.0".
