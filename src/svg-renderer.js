@@ -87,7 +87,7 @@ function RenderSVG(section, paragraphs, style) {
     }
 
     function typesetSvarasthana(para, line) {
-        typesetTimedText(para, line, 'background: yellow;');
+        typesetTimedText(para, line);
     }
 
     function typesetTimedText(para, line, additionalTextStyle) {
