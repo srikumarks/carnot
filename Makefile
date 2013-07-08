@@ -20,5 +20,9 @@ $(LIB).js : lib/assert.js src/*.js
 clean : 
 	rm $(LIB).js $(LIB).min.js
 
-deploy: $(LIB).min.js.gz
+sample.html.gz : sample.html
+	gzip -c sample.html > sample.html.gz
+
+deploy: $(LIB).min.js.gz sample.html.gz
 	which s3cmd && s3cmd $(GZIPENC) $(JSCONTENT) $(CACHE1W) put $(LIB).min.js.gz "s3://sriku.org/lib/$(LIB)/$(LIB).min.js"
+	which s3cmd && s3cmd $(GZIPENC) $(HTMLCONTENT) $(CACHE1W) put sample.html.gz "s3://sriku.org/lib/$(LIB)/sample.html"
