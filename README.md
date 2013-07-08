@@ -85,9 +85,14 @@ indicators are rendered by drawing vertical lines. Space is significant and can
 be used to visually group sub-akshara notes as in [the sample][sample].
 However, multiple spaces are collapsed into a single space. Furthermore, "|" is
 rendered as a single vertical line and "||" is rendered as a double vertical
-line, but all others such as "||||" will be rendered just like "||".
+line, but all others such as "||||" will be rendered just like "||". 
 
-There is no restriction on the types of talas you can encode using this scheme.
+The "_" character is also permitted and behaves exactly like "|" except that it
+doesn't cause a line to be drawn. This is useful to align aksharas of long
+talas whose avrtams get split into multiple lines.
+
+There is no restriction on the types of talas you can encode using this scheme,
+meaning you aren't limited to the 35 talas, or whatever.
 
 Example: 
 
@@ -102,7 +107,7 @@ It specifies how many of the tala aksharas a line should occupy.
 ## stretch
 
 Give a floating point value that will horizontally stretch the spacing used in
-the rendering.
+the rendering. A value of "2.0" will be twice as wide as a value of "1.0".
 
 [sample]: http://sriku.org/lib/carnot/sample.html
 
