@@ -35,6 +35,7 @@ function RenderSVG(section, paragraphs, style) {
 
     var talaCache = {};
     var cursor = {x: 0, y: 0, xmax: 0, ymax: 0};
+    var pendingLines = {};
 
     loadStyleDefaults(style);
 
@@ -55,9 +56,37 @@ function RenderSVG(section, paragraphs, style) {
 
     section.parentElement.insertBefore(div, section);
 
+    function extendLine(ix, x, fromY, toY) {
+        var l = pendingLines[ix];
+        if (!l) {
+            l = pendingLines[ix] = {x: x, fromY: fromY, toY: toY};
+        }
+
+        l.toY = toY;
+    }
+
+    function flushLines() {
+        var ix, l;
+        for (ix in pendingLines) {
+            if (pendingLines.hasOwnProperty(ix)) {
+                l = pendingLines[ix];
+                svgelem(svg, 'line', {
+                    x1: l.x, 
+                    y1: l.fromY,
+                    x2: l.x, 
+                    y2: l.toY,
+                    'stroke-width': 2, 
+                    stroke: 'black'
+                });
+            }
+        }
+        pendingLines = {};
+    }
+
     function typesetPara(para, i) {
         if (para.lines) {
             para.lines.forEach(function (line) { typesetLine(para, line); });
+            flushLines();
             if (i + 1 < paragraphs.length) {
                 nextLine(keyParaSpacing);
             }
@@ -67,6 +96,7 @@ function RenderSVG(section, paragraphs, style) {
     function typesetLine(para, line) {
         switch (line.type) {
             case 'text': 
+                flushLines();
                 typesetText(para, line); 
                 break;
             case 'svarasthana': 
@@ -143,14 +173,10 @@ function RenderSVG(section, paragraphs, style) {
                             }
                 } else if (instr.line) {
                     if (instr.draw) {
-                        svgelem(svg, 'line', {
-                            x1: cursor.x, 
-                            y1: (cursor.y + style[keyLineEndOffset]), 
-                            x2: cursor.x, 
-                            y2: (cursor.y - style[keyLineSpacing] - style[keyLineStartOffset]), 
-                            'stroke-width': 2, 
-                            stroke: 'black'
-                        });
+                        extendLine(instrIx, 
+                                cursor.x, 
+                                cursor.y - style[keyLineSpacing] - style[keyLineStartOffset],
+                                cursor.y + style[keyLineEndOffset]);
                     }
                     cursor.x += instr.line;
                 }
