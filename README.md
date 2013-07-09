@@ -62,13 +62,18 @@ are expected to be of the same symbolic duration.
    Additionally, "," can be used to indicate a *visible* time gap and "_" can
    be used to indicate an *invisible* gap. Upper and lower octave svarasthana
    symbols can be obtained by just suffixing the svarasthana letter with "+" or
-   "-" without intervening spaces. Spaces *must* separate these symbols for a
-   line to be considered as "svarasthana notation".
+   "-" without intervening spaces. Spaces *must* separate svara and gap symbols
+   and no other types of symbols must be present for a line to be considered as
+   "svarasthana notation".
+   
+   Ex: `S+ N , d , S+ , N d , P , P ,`
    
 3. "Lyrics" lines, which need to presented as timed syllables. The syntax is
    pretty much the same as for the svarasthana lines, except that the text is
    presented in words instead of letters. The textual content can be in any
    language.
+   
+   Ex: `mā _ yā _ tī _ ta _ sva rū _ pi ṇi _ _ _` 
 
 4. "Property" lines, which are of the form `some key = some value`. These
    control the interpretation of the other line types during rendering. If a
@@ -76,6 +81,8 @@ are expected to be of the same symbolic duration.
    considered to be applicable to all the following paragraphs. Properties
    specified within paragraphs with at least one other line type are considered
    to apply only to that paragraph.
+
+   Ex: `aksharas per line = 6`
    
 ## Properties
 
