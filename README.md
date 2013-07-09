@@ -3,6 +3,8 @@ Carnatic music notation within web pages.
 
 *Status:* ALPHA. Syntax and API are subject to change without notice.
 
+*Supported browsers*: Chrome, Safari and Firefox.
+
 ## Usage
 
 Include the script directly from the library URL like this -
