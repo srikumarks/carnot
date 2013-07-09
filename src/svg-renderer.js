@@ -232,7 +232,27 @@ function RenderSVG(section, paragraphs, style) {
             // On repetition, you may find patterns such as '||||' in the tala.
             // This we normalize to '||' - i.e. the maximum number of times a vertical
             // bar may be repeated is 2.
-            para.properties[keyTalaPattern] = compileTala(para.properties[keyTalaPattern].replace(/\|\|+/g, '||'));
+            tala = para.properties[keyTalaPattern] = compileTala(para.properties[keyTalaPattern].replace(/\|\|+/g, '||'));
+
+            // Adjust notation lines whose akshara count is smaller than
+            // the given aksharas per line. We do this by stretching the
+            // line by an integer factor.
+            para.lines.forEach(function (line) {
+                if (line.type !== 'text') {
+                    if (line.tokens.length < aksh) {
+                        ASSERT(aksh % line.tokens.length === 0);
+                        var i, j, M, N, newTokens = [];
+                        M = aksh / line.tokens.length;
+                        for (i = 0, N = line.tokens.length; i < N; ++i) {
+                            newTokens.push(line.tokens[i]);
+                            for (j = 1; j < M; ++j) {
+                                newTokens.push('_');
+                            }
+                        }
+                        line.tokens = newTokens;
+                    }
+                }
+            });
 
             para.tala_interval = {
                 from: fromAkshara,
