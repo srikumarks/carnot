@@ -4,6 +4,7 @@
  *
  * tala pattern = || , , , , | , , | , , ||
  * aksharas per line = 8
+ * aksharas = aksharas per line
  * line spacing = 22
  * para spacing = 22
  * notation font size = 13
@@ -22,6 +23,7 @@ function RenderSVG(section, paragraphs, style) {
 
     var keyTalaPattern = '$tala pattern';
     var keyAksharasPerLine = '$aksharas per line';
+    var keyAksharas = '$aksharas';
     var keyLineSpacing = '$line spacing';
     var keyParaSpacing = '$para spacing';
     var keyNotationFontSize = '$notation font size';
@@ -139,9 +141,10 @@ function RenderSVG(section, paragraphs, style) {
             ++instrIx;
         }
 
+        var givenAksharas = +(para.properties[keyAksharas] || para.properties[keyAksharasPerLine]);
         var startAkshIx = akshIx;
         var startInstrIx = instrIx;
-        var subdivs = line.tokens.length / (+para.properties[keyAksharasPerLine]);
+        var subdivs = line.tokens.length / givenAksharas;
         var textStyle = ('font-family:' + style[keyNotationFont] + ';') + ('font-size:' + (subdivs > 2 ? style[keyNotationSmallFontSize] : style[keyNotationFontSize]) + 'pt;') + (additionalTextStyle || '');
         var subDivIx = 0;
         var stretch = (+para.properties[keyStretch]) * style[keyStretch];
@@ -208,7 +211,7 @@ function RenderSVG(section, paragraphs, style) {
     // of the form {from: m, to:n}, where the aksharas
     // included are k >= m & k < n.
     function processTalaPatterns(paragraphs) {
-        var fromAkshara = 0, toAkshara = 0, aksharasInTala = 0, aksharasPerLine = 0;
+        var fromAkshara = 0, toAkshara = 0, aksharas = 0, aksharasInTala = 0, aksharasPerLine = 0;
 
         var i, N, para, tala, aksh;
 
@@ -219,8 +222,10 @@ function RenderSVG(section, paragraphs, style) {
 
             aksharasInTala = countAksharasInTala(tala);
             aksharasPerLine = +(para.properties[keyAksharasPerLine]);
+            aksharas = +(para.properties[keyAksharas] || para.properties[keyAksharasPerLine]);
+            
 
-            toAkshara += aksharasPerLine;
+            toAkshara += aksharas;
 
             // Repeat the tala pattern enough times to cover the given notation line.
             aksh = aksharasInTala;
