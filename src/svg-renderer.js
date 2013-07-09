@@ -11,7 +11,7 @@
  * notation font = serif
  * text font = serif
  * stretch = 1.0
- * stretch space = 1.5
+ * stretch space = 1.0
  * margin top = 22
  * margin left = 10
  * line extension top = 0
@@ -291,9 +291,9 @@ function RenderSVG(section, paragraphs, style) {
                     break;
                 case ' ':
                     if (nearLine) {
-                        instrs.push({space: 10, scale: false});
+                        instrs.push({space: 15, scale: false});
                     } else {
-                        instrs.push({space: 20, scale: true});
+                        instrs.push({space: 30, scale: true});
                     }
                     break;
                 case ',':
@@ -362,7 +362,7 @@ function RenderSVG(section, paragraphs, style) {
         style[keyNotationFont] = (style[keyNotationFont] || 'serif');
         style[keyTextFont] = (style[keyTextFont] || 'serif');
         style[keyStretch] = (+style[keyStretch]) || 1.0;
-        style[keyStretchSpace] = (+style[keyStretchSpace]) || 1.5;
+        style[keyStretchSpace] = (+style[keyStretchSpace]) || 1.0;
         style[keyMarginTop] = (+style[keyMarginTop]) || style[keyLineSpacing];
         style[keyMarginLeft] = (+style[keyMarginLeft]) || 10;
         style[keyLineExtensionTop] = (+style[keyLineExtensionTop]) || 0;

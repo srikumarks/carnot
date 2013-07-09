@@ -138,7 +138,7 @@ along with their default values.
     notation font = serif
     text font = serif
     stretch = 1.0
-    stretch space = 1.5
+    stretch space = 1.0
     margin top = 22
     margin left = 10
     line extension top = 0
