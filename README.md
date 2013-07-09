@@ -33,12 +33,12 @@ The script will search your page for `pre` tags with the class
     ḍen _ _ _ _ _ kaṇ _ _ _ ḍu _ aa _
     டேன் _ _ _ _ _ கண் _ _ _ டு _ ஆ _
 
-    , , P   , , , P   , m   , , P   , G
+    , , P   , , , P   , m   , , P   , m
     _ _ nan _ _ _ dam _ koṇ _ _ ḍen _ til 
     _ _ னந் _ _ _ தம் _ கொண் _ _ டேன் _ தில்
 
     aksharas per line = 2
-    , R
+    G R
     _ lai
     _ லை
     </pre>
