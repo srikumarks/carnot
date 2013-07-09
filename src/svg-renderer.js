@@ -10,7 +10,8 @@
  * notation small font size = 11
  * notation font = serif
  * text font = serif
- * stretch = 1.6
+ * stretch = 1.0
+ * stretch space = 1.5
  * margin top = 22
  * margin left = 10
  * line start offset = 0
@@ -28,6 +29,7 @@ function RenderSVG(section, paragraphs, style) {
     var keyNotationFont = '$notation font';
     var keyTextFont = '$text font';
     var keyStretch = '$stretch';
+    var keyStretchSpace = '$stretch space';
     var keyMarginTop = '$margin top';
     var keyMarginLeft = '$margin left';
     var keyLineStartOffset = '$line start offset';
@@ -143,6 +145,7 @@ function RenderSVG(section, paragraphs, style) {
         var textStyle = ('font-family:' + style[keyNotationFont] + ';') + ('font-size:' + (subdivs > 2 ? style[keyNotationSmallFontSize] : style[keyNotationFontSize]) + 'pt;') + (additionalTextStyle || '');
         var subDivIx = 0;
         var stretch = (+para.properties[keyStretch]) * style[keyStretch];
+        var stretchSpace = stretch * ((+para.properties[keyStretchSpace]) || style[keyStretchSpace]);
 
         REQUIRE(subdivs % 1.0 < 0.00001, "Invalid subdivision");
         subdivs = Math.floor(subdivs);
@@ -165,12 +168,11 @@ function RenderSVG(section, paragraphs, style) {
             // Consume other non-tick instructions up to the next tick.
             while (instrIx < tala.instructions.length && (instr = tala.instructions[instrIx], !instr.tick)) {
                 if (instr.space) {
-                    if ((instrIx + 1 < tala.instructions.length && tala.instructions[instrIx+1].line)
-                            || (instrIx > 0 && tala.instructions[instrIx-1].line)) {
-                                cursor.x += instr.space;
-                            } else {
-                                cursor.x += instr.space * stretch;
-                            }
+                    if (instr.scale) {
+                        cursor.x += instr.space * stretchSpace;
+                    } else {
+                        cursor.x += instr.space;
+                    }
                 } else if (instr.line) {
                     if (instr.draw) {
                         extendLine(instrIx, 
@@ -255,19 +257,24 @@ function RenderSVG(section, paragraphs, style) {
             return talaCache[talaKey];
         }
 
-        var i, N, c, instrs = [];
+        var i, N, c, instrs = [], nearLine;
         for (i = 0, N = talaPattern.length; i < N; ++i) {
             c = talaPattern.charAt(i);
+            nearLine = (i + 1 < N && talaPattern.charAt(i+1) === '|') || (i > 0 && talaPattern.charAt(i-1) === '|');
             switch (c) {
                 case '|' : 
-                    if ((i + 1 < N && talaPattern.charAt(i+1) === '|') || (i > 0 && talaPattern.charAt(i-1) === '|')) {
+                    if (nearLine) {
                         instrs.push({line: 5, draw: true});
                     } else {
                         instrs.push({line: 10, draw: true}); 
                     }
                     break;
                 case ' ':
-                    instrs.push({space: 10});
+                    if (nearLine) {
+                        instrs.push({space: 10, scale: false});
+                    } else {
+                        instrs.push({space: 20, scale: true});
+                    }
                     break;
                 case ',':
                     instrs.push({tick: 40});
@@ -334,7 +341,8 @@ function RenderSVG(section, paragraphs, style) {
         style[keyNotationSmallFontSize] = (+style[keyNotationSmallFontSize]) || (style[keyNotationFontSize] - 2);
         style[keyNotationFont] = (style[keyNotationFont] || 'serif');
         style[keyTextFont] = (style[keyTextFont] || 'serif');
-        style[keyStretch] = (+style[keyStretch]) || 1.6;
+        style[keyStretch] = (+style[keyStretch]) || 1.0;
+        style[keyStretchSpace] = (+style[keyStretchSpace]) || 1.5;
         style[keyMarginTop] = (+style[keyMarginTop]) || style[keyLineSpacing];
         style[keyMarginLeft] = (+style[keyMarginLeft]) || 10;
         style[keyLineStartOffset] = (+style[keyLineStartOffset]) || 0;
