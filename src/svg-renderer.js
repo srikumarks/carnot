@@ -14,8 +14,8 @@
  * stretch space = 1.5
  * margin top = 22
  * margin left = 10
- * line start offset = 0
- * line end offset = 5
+ * line extension top = 0
+ * line extension bottom = 5
  *
  */
 function RenderSVG(section, paragraphs, style) {
@@ -32,8 +32,8 @@ function RenderSVG(section, paragraphs, style) {
     var keyStretchSpace = '$stretch space';
     var keyMarginTop = '$margin top';
     var keyMarginLeft = '$margin left';
-    var keyLineStartOffset = '$line start offset';
-    var keyLineEndOffset = '$line end offset';
+    var keyLineExtensionTop = '$line extension top';
+    var keyLineExtensionBottom = '$line extension bottom';
 
     var talaCache = {};
     var cursor = {x: 0, y: 0, xmax: 0, ymax: 0};
@@ -115,7 +115,7 @@ function RenderSVG(section, paragraphs, style) {
     function typesetText(para, line) {
         svgelem(svg, 'text', {x: cursor.x, y: cursor.y, style: ('font-family: ' + style[keyTextFont] + ';') + 'font-size: 12pt;'}, line.tokens.join(' '));
         nextLine();
-        cursor.y += style[keyLineStartOffset] + style[keyLineEndOffset];
+        cursor.y += style[keyLineExtensionTop] + style[keyLineExtensionBottom];
     }
 
     function typesetSvarasthana(para, line) {
@@ -177,8 +177,8 @@ function RenderSVG(section, paragraphs, style) {
                     if (instr.draw) {
                         extendLine(instrIx, 
                                 cursor.x, 
-                                cursor.y - style[keyLineSpacing] - style[keyLineStartOffset],
-                                cursor.y + style[keyLineEndOffset]);
+                                cursor.y - style[keyLineSpacing] - style[keyLineExtensionTop],
+                                cursor.y + style[keyLineExtensionBottom]);
                     }
                     cursor.x += instr.line;
                 }
@@ -365,8 +365,8 @@ function RenderSVG(section, paragraphs, style) {
         style[keyStretchSpace] = (+style[keyStretchSpace]) || 1.5;
         style[keyMarginTop] = (+style[keyMarginTop]) || style[keyLineSpacing];
         style[keyMarginLeft] = (+style[keyMarginLeft]) || 10;
-        style[keyLineStartOffset] = (+style[keyLineStartOffset]) || 0;
-        style[keyLineEndOffset] = (+style[keyLineEndOffset]) || 5;
+        style[keyLineExtensionTop] = (+style[keyLineExtensionTop]) || 0;
+        style[keyLineExtensionBottom] = (+style[keyLineExtensionBottom]) || 5;
     }
 
     return null;

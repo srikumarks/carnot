@@ -132,8 +132,8 @@ along with their default values.
     stretch space = 1.5
     margin top = 22
     margin left = 10
-    line start offset = 0
-    line end offset = 5
+    line extension top = 0
+    line extension bottom = 5
     </pre>
 
 
