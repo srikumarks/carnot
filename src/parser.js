@@ -44,6 +44,10 @@ function Parse(pre) {
         return str.trim().replace(/\s+/g, ' ');
     }
 
+    function normalizePropertyKey(key) {
+        return normalize(key).toLowerCase();
+    }
+
     function parseLine(line) {
         var type, tokens;
         if (/^\>/.test(line)) {
@@ -55,6 +59,8 @@ function Parse(pre) {
             // tokens[0] is the key and tokens[1] is the value.
             type = 'property';
             tokens = line.split('=').filter(isNotEmpty).map(normalize);
+            REQUIRE(tokens.length === 2);
+            tokens[0] = normalizePropertyKey(tokens[0]);
         } else {
             // Test for svarasthana or lyrics.
             tokens = split(line, /\s/g);
