@@ -112,6 +112,29 @@ the rendering. A value of "2.0" will be twice as wide as a value of "1.0".
 [sample]: http://sriku.org/lib/carnot/sample.html
 
 
+## Style controls
+
+If you place a `pre` section with class `carnot_style`, then the properties
+specified in that section are loaded into a style object that is passed to the
+renderer. If this section is absent, then default styling applies.
+
+The following parameters are available for customization and are given below
+along with their default values.
+
+    <pre class="carnot_style">
+    line spacing = 22
+    para spacing = 22
+    notation font size = 13
+    notation small font size = 11
+    notation font = serif
+    text font = serif
+    stretch = 1.0
+    stretch space = 1.5
+    margin top = 22
+    margin left = 10
+    line start offset = 0
+    line end offset = 5
+    </pre>
 
 
 
