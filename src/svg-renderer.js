@@ -239,12 +239,14 @@ function RenderSVG(section, paragraphs, style) {
             // bar may be repeated is 2.
             tala = para.properties[keyTalaPattern] = compileTala(para.properties[keyTalaPattern].replace(/\|\|+/g, '||'));
 
+            var paraAksharas = +(para.properties[keyAksharas] || para.properties[keyAksharasPerLine]);
+
             // Adjust notation lines whose akshara count is smaller than
             // the given aksharas per line. We do this by stretching the
             // line by an integer factor.
             para.lines.forEach(function (line) {
                 if (line.type !== 'text') {
-                    if (line.tokens.length < aksh) {
+                    if (line.tokens.length < paraAksharas) {
                         ASSERT(aksh % line.tokens.length === 0);
                         var i, j, M, N, newTokens = [];
                         M = aksh / line.tokens.length;
