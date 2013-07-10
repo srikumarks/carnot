@@ -19,7 +19,7 @@ org.sriku.Carnot = (function (Carnot) {
         sections = Array.prototype.slice.call(sections);
         sections.forEach(function (s) { return s.hidden = true; }); // Hide them all first.
         for (i = 0, N = sections.length; i < N; ++i) {
-            svgs.push(RenderSVG(sections[i], Parse(sections[i]), style));
+            svgs.push(RenderSVG(GLOBAL, sections[i], Parse(sections[i]), style));
             Carnot.emit('rendered_section', svgs[i]);
         }
 

@@ -19,7 +19,7 @@
  * line extension bottom = 5
  *
  */
-function RenderSVG(section, paragraphs, style) {
+function RenderSVG(window, section, paragraphs, style) {
 
     var keyTalaPattern = '$tala pattern';
     var keyAksharasPerLine = '$aksharas per line';
@@ -49,8 +49,8 @@ function RenderSVG(section, paragraphs, style) {
 
     processTalaPatterns(paragraphs);
 
-    var div = GLOBAL.document.createElement('div');
-    var svg = GLOBAL.document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    var div = window.document.createElement('div');
+    var svg = window.document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     div.insertBefore(svg, null);
     
     paragraphs.forEach(typesetPara);
@@ -346,7 +346,7 @@ function RenderSVG(section, paragraphs, style) {
     }
 
     function svgelem(elem, n, attrs, content) {
-        var tag = GLOBAL.document.createElementNS('http://www.w3.org/2000/svg', n);
+        var tag = window.document.createElementNS('http://www.w3.org/2000/svg', n);
         if (attrs) {
             Object.keys(attrs).forEach(function (k) {
                 if (attrs[k]) {
