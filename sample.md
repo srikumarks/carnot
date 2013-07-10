@@ -1,33 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <title></title>
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-</head>
-<body>
 <script src="carnot.min.js"></script>
 
 <!--
 
 To generate HTML output from this Markdown file, 
-use [pandoc] with the following
-command -
+use [pandoc] with the following command -
 
     pandoc --from=markdown --to=html5 -s sample.md -o sample.html
 
-
+[pandoc]: http://johnmacfarlane.net/pandoc/
 
 -->
 
-<h1 id="pallavi">Pallavi</h1>
-<p>&quot;Kanakasabēśan&quot;<br><em>Raga:</em> Shankarābharaṇam<br><em>Tala:</em> Miśra Cāpu</p>
-<pre class="carnot_style"><code>stretch = 1.0
-stretch space = 1.0</code></pre>
-<pre class="carnot_section"><code>tala pattern = || ,, ,, ,, | ,, ,, | ,, ,, ||
+# Pallavi
+
+"Kanakasabēśan"  
+*Raga:* Shankarābharaṇam  
+*Tala:* Miśra Cāpu  
+
+~~~~{.carnot_style}
+stretch = 1.0
+stretch space = 1.0
+~~~~
+
+~~~~{.carnot_section}
+tala pattern = || ,, ,, ,, | ,, ,, | ,, ,, ||
 aksharas per line = 14
 
 , , G  m  , P  , m  , G  , , m   G
@@ -49,6 +45,6 @@ _ _ னந் _ _ _ தம் _ கொண் _ _ டேன் _ தில்
 aksharas = 2
 G R
 _ lai
-_ லை</code></pre>
-</body>
-</html>
+_ லை
+~~~~
+
