@@ -12,11 +12,6 @@ org.sriku.Carnot = (function (Carnot) {
 #include "parser.js"
 #include "svg-renderer.js"
 
-    var windowLoaded = false;
-    GLOBAL.addEventListener('load', function () {
-        windowLoaded = true;
-    });
-
     Carnot['renderSections'] = function (sectionSelector, style) {
         style = style || {};
         var sections = GLOBAL.document.querySelectorAll(sectionSelector);
@@ -32,27 +27,43 @@ org.sriku.Carnot = (function (Carnot) {
     };
 
     Carnot['renderPage'] = function (style) {
-        if (windowLoaded) {
+        if (GLOBAL.document.readyState === 'interactive') {
             setTimeout(Carnot.renderSections, 0, 'pre.carnot_section', style);
         } else {
-            GLOBAL.addEventListener('load', function () {
-                Carnot.renderSections('pre.carnot_section', style);
+            GLOBAL.document.addEventListener('readystatechange', function () {
+                if (GLOBAL.document.readyState === 'interactive') {
+                    Carnot.renderSections('pre.carnot_section', style);
+                    GLOBAL.document.removeEventListener('readystatechange', arguments.callee);
+                }
             });
         }
     };
 
+    function renderDocWithStyle() {
+        var style = GLOBAL.document.querySelector('pre.carnot_style');
+        if (style) {
+            style.hidden = true;
+            style = Parse(style)[0].properties;
+        } else {
+            style = {};
+        }
+
+        Carnot.renderPage(style);
+    }
+
     // If a "carnot_style" class pre is present, load it up
     // and immediately begin rendering. Otherwise wait for
     // an explicit Carnot.render call.
-    var style = GLOBAL.document.querySelector('pre.carnot_style');
-    if (style) {
-        style.hidden = true;
-        style = Parse(style)[0].properties;
+    if (GLOBAL.document.readyState === "interactive") {
+        renderDocWithStyle();
     } else {
-        style = {};
+        GLOBAL.document.addEventListener('readystatechange', function () {
+            if (GLOBAL.document.readyState === 'interactive') {
+                renderDocWithStyle();
+                GLOBAL.document.removeEventListener('readystatechange', arguments.callee);
+            }
+        });
     }
-
-    Carnot.renderPage(style);
 
     return Carnot;
 
