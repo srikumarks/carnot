@@ -14,7 +14,12 @@ org.sriku.Carnot = (function (Carnot) {
 
     Carnot['renderSections'] = function (sectionSelector, style) {
         style = style || {};
-        var sections = GLOBAL.document.querySelectorAll(sectionSelector);
+        var sections = (typeof(sectionSelector) === 'string' 
+            ? GLOBAL.document.querySelectorAll(sectionSelector)
+            : sectionSelector);
+
+        WARNIF(sections.length === 0, "Carnot: No sections to render.");
+        
         var svgs = [], i, N;
         sections = Array.prototype.slice.call(sections);
         sections.forEach(function (s) { return s.hidden = true; }); // Hide them all first.
@@ -28,7 +33,7 @@ org.sriku.Carnot = (function (Carnot) {
 
     Carnot['renderPage'] = function (style) {
         if (GLOBAL.document.readyState === 'interactive') {
-            setTimeout(Carnot.renderSections, 0, 'pre.carnot_section', style);
+            setTimeout(Carnot.renderSections, 0, findCarnotSections(), style);
         } else {
             GLOBAL.document.addEventListener('readystatechange', function () {
                 if (GLOBAL.document.readyState === 'interactive') {
@@ -38,6 +43,30 @@ org.sriku.Carnot = (function (Carnot) {
             });
         }
     };
+
+    // Search for <pre> tags with class "carnot_section",
+    // or pre tags which begin with the line - "tala pattern = ..."
+    // and don't have class "carnot_ignore".
+    function findCarnotSections() {
+        var explicitSections = GLOBAL.document.querySelectorAll('pre.carnot_section');
+        var sections = Array.prototype.slice.call(explicitSections);
+
+        var allPreTags = GLOBAL.document.querySelectorAll('pre');
+        var i, N, pre;
+        for (i = 0, N = allPreTags.length; i < N; ++i) {
+            pre = allPreTags[i];
+            if (!pre.classList.contains('carnot_ignore')) {
+                if (/^\s*tala\s+pattern\s*=/.test(pre.textContent)) {
+                    // Starts with "tala pattern = " and does not
+                    // have class "carnot_ignore", so we consider it
+                    // to be a carnot_section.
+                    sections.push(pre);
+                }
+            }
+        }
+
+        return sections;
+    }
 
     function renderDocWithStyle() {
         var style = GLOBAL.document.querySelector('pre.carnot_style');

@@ -7,8 +7,6 @@ use [pandoc] with the following command -
 
     pandoc --from=markdown --to=html5 -s sample.md -o sample.html
 
-[pandoc]: http://johnmacfarlane.net/pandoc/
-
 -->
 
 # Pallavi
