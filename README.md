@@ -22,7 +22,6 @@ a blog post to display the prescriptive and descriptive notation
 of a whole composition.
 
 
-    <pre class="carnot_section">
     tala pattern = || ,, ,, ,, | ,, ,, | ,, ,, ||
     aksharas per line = 14
     stretch = 0.6
@@ -47,10 +46,16 @@ of a whole composition.
     G R
     _ lai
     _ லை
-    </pre>
     
 
+If you're using [Markdown], including a section to be typeset by
+Carnot is a breeze. Any [Markdown code block][MCS] that begins
+with `tala pattern = ...blah-blah...` will be considered as
+a Carnot section and typeset accordingly.
+
+[Markdown]: http://daringfireball.net/projects/markdown/
 [GR]: http://sriku.org/blog/2013/07/09/notation-ganarajena-rakshitoham/
+[MCS]: http://daringfireball.net/projects/markdown/syntax#precode
 
 ## Syntax
 
