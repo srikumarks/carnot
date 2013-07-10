@@ -13,8 +13,14 @@ Include the script directly from the library URL like this -
 
 It doesn't matter where within the page you include it.
 
-The script will search your page for `pre` tags with the class 
-`carnot_section` and render them using SVG. Here is an example -
+The script will search your page for `pre` tags with the class `carnot_section`
+and render them using SVG. 
+
+You can see a rendering of the below example [here][sample]. 
+[Ganarajena Rakshitoham][GR] is a larger example of using Carnot within 
+a blog post to display the prescriptive and descriptive notation 
+of a whole composition.
+
 
     <pre class="carnot_section">
     tala pattern = || ,, ,, ,, | ,, ,, | ,, ,, ||
@@ -43,7 +49,8 @@ The script will search your page for `pre` tags with the class
     _ லை
     </pre>
     
-[Click here][sample] to see a rendering of the above notation.
+
+[GR]: http://sriku.org/blog/2013/07/09/notation-ganarajena-rakshitoham/
 
 ## Syntax
 
