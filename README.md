@@ -37,7 +37,7 @@ The script will search your page for `pre` tags with the class
     _ _ nan _ _ _ dam _ koṇ _ _ ḍen _ til 
     _ _ னந் _ _ _ தம் _ கொண் _ _ டேன் _ தில்
 
-    aksharas per line = 2
+    aksharas = 2
     G R
     _ lai
     _ லை
