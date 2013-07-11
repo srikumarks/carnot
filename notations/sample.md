@@ -1,4 +1,4 @@
-<script src="carnot.min.js"></script>
+<script src="http://sriku.org/lib/carnot/carnot.min.js"></script>
 
 <!--
 
@@ -21,22 +21,22 @@ stretch space = 1.0
 ~~~~
 
 
-    tala pattern = || ,, ,, ,, | ,, ,, | ,, ,, ||
-    aksharas per line = 14
+    tala pattern = || , , , | , , | , , ||
+    aksharas per line = 7
     
-    , , G  m  , P  , m  , G  , , m   G
+    ,, Gm ,P ,m ,G ,, mG
     _ _ ka na _ ka _ sa _ bē _ _ śan _
     _ _ க ன _ க _ ச _ பே _ _ சன் _
     
-    R S  , , S  , , S  , S   , , N-   , 
+    RS ,, S, ,S ,S ,, N-,
     _ da _ _ ri _ _ sa _ nam _ _ kaṇ _
     _ த _ _ ரி _ _ ச _ னம் _ _ கண் _
     
-    S   , , , , , R   , , , G  , m  , 
+    S, ,, ,, R, ,, G, m,
     ḍen _ _ _ _ _ kaṇ _ _ _ ḍu _ aa _
     டேன் _ _ _ _ _ கண் _ _ _ டு _ ஆ _
     
-    , , P   , , , P   , m   , , P   , m
+    ,, P, ,, P, m, ,P ,m
     _ _ nan _ _ _ dam _ koṇ _ _ ḍen _ til 
     _ _ னந் _ _ _ தம் _ கொண் _ _ டேன் _ தில்
     

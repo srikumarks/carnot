@@ -1,6 +1,6 @@
 % gaṇarājena rakshitoham
 
-<script src="../carnot.js"></script>
+<script src="http://sriku.org/lib/carnot/carnot.min.js"></script>
 
 <!-- 
 
