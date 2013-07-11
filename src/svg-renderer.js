@@ -159,12 +159,15 @@ function RenderSVG(window, section, paragraphs, style) {
 
         REQUIRE(subdivs % 1.0 < 0.00001, "Invalid subdivision");
         subdivs = Math.floor(subdivs);
+        props = {x: cursor.x, y: cursor.y, style: textStyle};
 
         while (akshIx < para.tala_interval.to) {
             instr = tala.instructions[instrIx];
             if (instr.tick) {
                 dx = instr.tick * stretch / subdivs;
-                props = {x: cursor.x, y: cursor.y, style: textStyle};
+                props.x = cursor.x;
+                props.y = cursor.y;
+                props.style = textStyle;
                 if (isSvarasthana) {
                     subsvaras = getSubSvaras(line.tokens[tokIx]);
                     if (subsvaras.length > 2) {
