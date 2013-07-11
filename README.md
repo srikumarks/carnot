@@ -130,7 +130,7 @@ It specifies how many of the tala aksharas a line should occupy.
 Give a floating point value that will horizontally stretch the spacing used in
 the rendering. A value of "2.0" will be twice as wide as a value of "1.0".
 
-[sample]: http://sriku.org/lib/carnot/sample.html
+[sample]: http://sriku.org/notations/sample.html
 
 
 ## Style controls
