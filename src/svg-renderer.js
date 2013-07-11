@@ -161,6 +161,11 @@ function RenderSVG(window, section, paragraphs, style) {
         subdivs = Math.floor(subdivs);
         props = {x: cursor.x, y: cursor.y, style: textStyle};
 
+        var renderSubsvara = function (s) {
+            svgelem(svg, 'text', props, show(s));
+            props.x += dx / subsvaras.length;
+        };
+
         while (akshIx < para.tala_interval.to) {
             instr = tala.instructions[instrIx];
             if (instr.tick) {
@@ -173,22 +178,20 @@ function RenderSVG(window, section, paragraphs, style) {
                     if (subsvaras.length > 2) {
                         props.style = textStyleSmall;
                     }
-                    subsvaras.forEach(function (s) {
-                        svgelem(svg, 'text', props, show(s));
-                        props.x += dx / subsvaras.length;
-                    });
+                    subsvaras.forEach(renderSubsvara);
                 } else {
                     svgelem(svg, 'text', props, show(line.tokens[tokIx]));
                 }
                 cursor.x += dx;
                 ++subDivIx;
                 ++tokIx;
-                if (subDivIx < subdivs) {
+                if (subDivIx >= subdivs) {
+                    subDivIx = 0;
+                    ++akshIx;
+                    ++instrIx;
+                } else {
                     continue;
                 }
-                subDivIx = 0;
-                ++akshIx;
-                ++instrIx;
             } 
 
             // Consume other non-tick instructions up to the next tick.
