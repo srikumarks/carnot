@@ -65,7 +65,9 @@ function Parse(pre) {
             // Test for svarasthana or lyrics.
             tokens = split(line, /\s/g);
             if (tokens.filter(function (tok) {
-                return (/^([SrRgGmMPdDnN][\+\-]*)|([,_]+)$/).test(tok);
+                // Accept svaras not separated by space as well.
+                // Each such "word" will be typeset within the space of one akshara.
+                return (/^(([SrRgGmMPdDnN][\+\-]*)|[,_])+$/).test(tok);
             }).length === tokens.length) {
                 type = 'svarasthana';
             } else {

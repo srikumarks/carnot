@@ -124,6 +124,10 @@ function RenderSVG(window, section, paragraphs, style) {
         typesetTimedText(para, line);
     }
 
+    function getSubSvaras(word) {
+        return word.match(/([SrRgGmMPdDnNS][\+\-]*)|[,_]/g) || [];
+    }
+
     function typesetTimedText(para, line, additionalTextStyle) {
         var tala = para.properties[keyTalaPattern];
         var akshIx = 0, instrIx = 0, tokIx = 0, instr;
@@ -146,9 +150,12 @@ function RenderSVG(window, section, paragraphs, style) {
         var startInstrIx = instrIx;
         var subdivs = line.tokens.length / givenAksharas;
         var textStyle = ('font-family:' + style[keyNotationFont] + ';') + ('font-size:' + (subdivs > 2 ? style[keyNotationSmallFontSize] : style[keyNotationFontSize]) + 'pt;') + (additionalTextStyle || '');
+        var textStyleSmall = ('font-family:' + style[keyNotationFont] + ';') + ('font-size:' + style[keyNotationSmallFontSize] + 'pt;') + (additionalTextStyle || '');
         var subDivIx = 0;
         var stretch = (+para.properties[keyStretch]) * style[keyStretch];
         var stretchSpace = stretch * ((+para.properties[keyStretchSpace]) || style[keyStretchSpace]);
+        var subsvaras, props, dx;
+        var isSvarasthana = line.type === 'svarasthana';
 
         REQUIRE(subdivs % 1.0 < 0.00001, "Invalid subdivision");
         subdivs = Math.floor(subdivs);
@@ -156,8 +163,21 @@ function RenderSVG(window, section, paragraphs, style) {
         while (akshIx < para.tala_interval.to) {
             instr = tala.instructions[instrIx];
             if (instr.tick) {
-                svgelem(svg, 'text', {x: cursor.x, y: cursor.y, style: textStyle}, show(line.tokens[tokIx]));
-                cursor.x += instr.tick * stretch / subdivs;
+                dx = instr.tick * stretch / subdivs;
+                props = {x: cursor.x, y: cursor.y, style: textStyle};
+                if (isSvarasthana) {
+                    subsvaras = getSubSvaras(line.tokens[tokIx]);
+                    if (subsvaras.length > 2) {
+                        props.style = textStyleSmall;
+                    }
+                    subsvaras.forEach(function (s) {
+                        svgelem(svg, 'text', props, show(s));
+                        props.x += dx / subsvaras.length;
+                    });
+                } else {
+                    svgelem(svg, 'text', props, show(line.tokens[tokIx]));
+                }
+                cursor.x += dx;
                 ++subDivIx;
                 ++tokIx;
                 if (subDivIx < subdivs) {
