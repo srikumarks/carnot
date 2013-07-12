@@ -14,6 +14,8 @@ Krti by *Sri Muttusvāmi Dīkshitar*
 in raga *Ārabhi*,  
 tala *Misra Cāpu*.
 
+See the [Markdown source file with the notation](ganarajena2.md).
+
 <pre class="carnot_style" hidden>
 notation font size = 12
 notation small font size = 10

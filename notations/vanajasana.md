@@ -6,6 +6,8 @@ Krti by *Sri Subbharaya Sastri*
 in raga *Sri*  
 tala *Rupakam*  
 
+See the [Markdown source file with the notation](vanajasana.md).
+
 ## Sri ragam
 
     tala pattern = ,
