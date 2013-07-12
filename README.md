@@ -19,7 +19,8 @@ and render them using SVG.
 You can see a rendering of the below example [here][sample]. 
 [Ganarajena Rakshitoham][GR] is a larger example of using Carnot within 
 a blog post to display the prescriptive and descriptive notation 
-of a whole composition.
+of a whole composition. [Sarali varisai][saralivarisai] is also a
+simple illustration of using Carnot.
 
 
     tala pattern = || ,, ,, ,, | ,, ,, | ,, ,, ||
@@ -131,6 +132,7 @@ Give a floating point value that will horizontally stretch the spacing used in
 the rendering. A value of "2.0" will be twice as wide as a value of "1.0".
 
 [sample]: http://sriku.org/notations/sample.html
+[saralivarisai]: http://sriku.org/notations/saralivarisai.html
 
 
 ## Style controls
