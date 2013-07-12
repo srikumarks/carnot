@@ -1,4 +1,4 @@
-% Jantai varisai
+% Alankarams
 
 <script src="http://sriku.org/lib/carnot/carnot.min.js"></script>
 
