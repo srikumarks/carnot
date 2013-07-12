@@ -19,7 +19,7 @@
  * line extension bottom = 5
  *
  */
-function RenderSVG(window, section, paragraphs, style) {
+function RenderSVG(window, paragraphs, style) {
 
     var keyTalaPattern = '$tala pattern';
     var keyAksharasPerLine = '$aksharas per line';
@@ -43,7 +43,6 @@ function RenderSVG(window, section, paragraphs, style) {
 
     loadStyleDefaults(style);
 
-    section.hidden = true;
     cursor.y = style[keyMarginTop];
     cursor.x = style[keyMarginLeft];
 
@@ -57,8 +56,6 @@ function RenderSVG(window, section, paragraphs, style) {
 
     svg.setAttribute('width', cursor.xmax);
     svg.setAttribute('height', cursor.ymax);
-
-    section.parentElement.insertBefore(div, section);
 
     function extendLine(ix, x, fromY, toY) {
         var l = pendingLines[ix];
@@ -149,11 +146,16 @@ function RenderSVG(window, section, paragraphs, style) {
         var startAkshIx = akshIx;
         var startInstrIx = instrIx;
         var subdivs = line.tokens.length / givenAksharas;
-        var textStyle = ('font-family:' + style[keyNotationFont] + ';') + ('font-size:' + (subdivs > 2 ? style[keyNotationSmallFontSize] : style[keyNotationFontSize]) + 'pt;') + (additionalTextStyle || '');
-        var textStyleSmall = ('font-family:' + style[keyNotationFont] + ';') + ('font-size:' + style[keyNotationSmallFontSize] + 'pt;') + (additionalTextStyle || '');
-        var subDivIx = 0;
         var stretch = (+para.properties[keyStretch]) * style[keyStretch];
         var stretchSpace = stretch * ((+para.properties[keyStretchSpace]) || style[keyStretchSpace]);
+        var textStyleBase = ('font-family:' + (line.type === 'lyrics' ? 'serif' : style[keyNotationFont]) + ';') + (additionalTextStyle || '');
+        var smallFontSize = (+(para.properties[keyNotationSmallFontSize] || style[keyNotationSmallFontSize]));
+        var fontSize = function (n) {
+//            return 'font-size:' + Math.max(8,Math.ceil(style[keyNotationFontSize]/Math.log(n))) + 'pt;';
+            return 'font-size: ' + (n > 2 ? smallFontSize : style[keyNotationFontSize]) + 'pt;';
+        };
+        var textStyle = textStyleBase + fontSize(subdivs);
+        var subDivIx = 0;
         var subsvaras, props, dx;
         var isSvarasthana = line.type === 'svarasthana';
 
@@ -176,7 +178,7 @@ function RenderSVG(window, section, paragraphs, style) {
                 if (isSvarasthana) {
                     subsvaras = getSubSvaras(line.tokens[tokIx]);
                     if (subsvaras.length > 2) {
-                        props.style = textStyleSmall;
+                        props.style = textStyleBase + fontSize(subsvaras.length * subdivs);
                     }
                     subsvaras.forEach(renderSubsvara);
                 } else {
@@ -402,5 +404,5 @@ function RenderSVG(window, section, paragraphs, style) {
         style[keyLineExtensionBottom] = (+style[keyLineExtensionBottom]) || 5;
     }
 
-    return null;
+    return svg;
 }

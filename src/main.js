@@ -12,6 +12,18 @@ org.sriku.Carnot = (function (Carnot) {
 #include "parser.js"
 #include "svg-renderer.js"
 
+    // notation = text
+    // style = object
+    // => svg element
+    Carnot['renderNotation'] = function (notation, style) {
+        style = style || {};
+
+        var pre = GLOBAL.document.createElement('pre');
+        pre.textContent = notation;
+
+        return RenderSVG(GLOBAL, Parse(pre), style);
+    };
+
     Carnot['renderSections'] = function (sectionSelector, style) {
         style = style || {};
         var sections = (typeof(sectionSelector) === 'string' 
@@ -24,7 +36,8 @@ org.sriku.Carnot = (function (Carnot) {
         sections = Array.prototype.slice.call(sections);
         sections.forEach(function (s) { return s.hidden = true; }); // Hide them all first.
         for (i = 0, N = sections.length; i < N; ++i) {
-            svgs.push(RenderSVG(GLOBAL, sections[i], Parse(sections[i]), style));
+            svgs.push(RenderSVG(GLOBAL, Parse(sections[i]), style));
+            sections[i].parentElement.insertBefore(svgs[i], sections[i]);
             Carnot.emit('rendered_section', svgs[i]);
         }
 
