@@ -83,8 +83,8 @@ function Parse(pre) {
 
     // Default properties
     var properties = {
-        '$aksharas per line': 8,
-        '$tala pattern' : '|| , , , , | , , | , , ||',
+        '$aksharas per line': 16,
+        '$tala pattern' : ',',
         '$stretch' : 1.0
     };
 
