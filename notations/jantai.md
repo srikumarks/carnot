@@ -9,8 +9,8 @@ With all play the 1st speed once,
 the 2nd speed twice and 3rd speed 4 times.
 
 <pre class="carnot_style" hidden>
-stretch = 1.0
-stretch space = 1.0
+stretch = 1.25
+stretch space = 0.75
 </pre>
 
 ## Jantai 1

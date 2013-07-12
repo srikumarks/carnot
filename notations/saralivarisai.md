@@ -5,15 +5,12 @@
 Basic traditional scalar exercises for Carantic music.
 See the [Markdown source file with the notation](saralivarisai.md).
 
-<pre class="carnot_style" hidden>
-stretch = 2.5
-stretch space = 0.4
-</pre>
-
 ## Sarali
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
+    stretch = 2.25
+    stretch space = 0.3
 
     > 1st speed
     S r G m P d N S+
