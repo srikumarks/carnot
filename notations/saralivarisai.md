@@ -2,7 +2,7 @@
 
 <script src="http://sriku.org/lib/carnot/carnot.min.js"></script>
 
-Basic traditional scalar exercises for Carantic music.
+Basic traditional scalar exercises for Carnatic music.
 See the [Markdown source file with the notation](saralivarisai.md).
 
 ## Sarali
