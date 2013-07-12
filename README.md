@@ -19,9 +19,7 @@ and render them using SVG.
 You can see a rendering of the below example [here][sample]. 
 [Ganarajena Rakshitoham][GR] is a larger example of using Carnot within 
 a blog post to display the prescriptive and descriptive notation 
-of a whole composition. [Sarali varisai][saralivarisai] is also a
-simple illustration of using Carnot.
-
+of a whole composition. 
 
     tala pattern = || ,, ,, ,, | ,, ,, | ,, ,, ||
     aksharas per line = 14
@@ -53,6 +51,11 @@ If you're using [Markdown], including a section to be typeset by
 Carnot is a breeze. Any [Markdown code block][MCS] that begins
 with `tala pattern = ...blah-blah...` will be considered as
 a Carnot section and typeset accordingly.
+
+### Examples - Traditional Carnatic exercises
+
+1. [Sarali varisai](http://sriku.org/notations/jantaivarisai.html)
+2. [Jantai varisai](http://sriku.org/notations/jantaivarisai.html)
 
 [Markdown]: http://daringfireball.net/projects/markdown/
 [GR]: http://sriku.org/blog/2013/07/09/notation-ganarajena-rakshitoham/
@@ -132,7 +135,6 @@ Give a floating point value that will horizontally stretch the spacing used in
 the rendering. A value of "2.0" will be twice as wide as a value of "1.0".
 
 [sample]: http://sriku.org/notations/sample.html
-[saralivarisai]: http://sriku.org/notations/saralivarisai.html
 
 
 ## Style controls
