@@ -392,7 +392,7 @@ function RenderSVG(window, section, paragraphs, style) {
         style[keyParaSpacing] = (+style[keyParaSpacing]) || style[keyLineSpacing];
         style[keyNotationFontSize] = (+style[keyNotationFontSize]) || 13;
         style[keyNotationSmallFontSize] = (+style[keyNotationSmallFontSize]) || (style[keyNotationFontSize] - 2);
-        style[keyNotationFont] = (style[keyNotationFont] || 'serif');
+        style[keyNotationFont] = (style[keyNotationFont] || 'sans-serif');
         style[keyTextFont] = (style[keyTextFont] || 'serif');
         style[keyStretch] = (+style[keyStretch]) || 1.0;
         style[keyStretchSpace] = (+style[keyStretchSpace]) || 1.0;
