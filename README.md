@@ -54,7 +54,7 @@ a Carnot section and typeset accordingly.
 
 ### Examples - Traditional Carnatic exercises
 
-1. [Sarali varisai](http://sriku.org/notations/jantaivarisai.html)
+1. [Sarali varisai](http://sriku.org/notations/saralivarisai.html)
 2. [Jantai varisai](http://sriku.org/notations/jantai.html)
 
 [Markdown]: http://daringfireball.net/projects/markdown/
