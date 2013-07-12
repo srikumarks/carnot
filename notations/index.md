@@ -9,4 +9,5 @@
 ## Compositions
 
 - Ganarajena rakshitoham ([version 1](ganarajena.html), [version 2](ganarajena2.html))
+- [Vanajasana](vanajasana.html)
 
