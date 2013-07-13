@@ -23,20 +23,20 @@ See the [Markdown source file with the notation](vanajasana.md).
 
     tala pattern = ||, , , , , ,||
     aksharas per line = 12
-    stretch = 2.0
+    stretch = 1.5 
     stretch space = 0.4
     notation small font size = 10
     
-    R R R , g R S S RS ,n- n- P
+    R R R , g R S S RS ,n- n- P-
     va na jā _ sa na vi nu tā _ na ta
 
     n- S R mR m P  mP nn Pm R g RS
     va ra dā _ ya ki srī _ _ la li te
 
-    R R R Pm,R g R S S n-SR, RS,n- n- P 
+    R R R Pm,R g R S S n-SR, RS,n- n- P- 
     va na jā _ sa na vi nu tā _ na ta
     
-    n- S R PmmR,,,, m P RmPn S+R+S+n PnPm R g RS
+    n- S R PmmR,,,, m P RmPn S+R+S+n PnPm R g gRRS
     va ra dā _ ya ki srī _ _ la li te
 
     aksharas = 4
