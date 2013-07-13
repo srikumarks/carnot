@@ -1,9 +1,16 @@
 **Carnot** is an easy to use Javascript library for typesetting 
 Carnatic music notation within web pages.
 
+Carnot can be used in conjunction with Markdown for typesetting
+entire documents. The prototype [live Carnot editor][carnoteditor]
+can be used to typeset notation and print right from within
+your browser.
+
 *Status:* ALPHA. Syntax and API are subject to change without notice.
 
 *Supported browsers*: Chrome, Safari and Firefox.
+
+[carnoteditor]: http://srikumarks.github.io/demos/carnot
 
 ## Usage
 
