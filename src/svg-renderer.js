@@ -151,7 +151,7 @@ function RenderSVG(window, paragraphs, style) {
         var textStyleBase = ('font-family:' + (line.type === 'lyrics' ? 'serif' : style[keyNotationFont]) + ';') + (additionalTextStyle || '');
         var smallFontSize = (+(para.properties[keyNotationSmallFontSize] || style[keyNotationSmallFontSize]));
         var fontSize = function (n) {
-//            return 'font-size:' + Math.max(8,Math.ceil(style[keyNotationFontSize]/Math.log(n))) + 'pt;';
+//            return 'font-size:' + Math.max(8,Math.ceil(style[keyNotationFontSize]/Math.log(Math.max(1,n)))) + 'pt;';
             return 'font-size: ' + (n > 2 ? smallFontSize : style[keyNotationFontSize]) + 'pt;';
         };
         var textStyle = textStyleBase + fontSize(subdivs);

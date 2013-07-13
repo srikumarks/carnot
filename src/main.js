@@ -46,7 +46,7 @@ org.sriku.Carnot = (function (Carnot) {
 
     Carnot['renderPage'] = function (style) {
         if (GLOBAL.document.readyState === 'interactive') {
-            setTimeout(Carnot.renderSections, 0, findCarnotSections(), style);
+            setTimeout(Carnot.renderSections, 0, findSections(GLOBAL.document), style);
         } else {
             GLOBAL.document.addEventListener('readystatechange', function () {
                 if (GLOBAL.document.readyState === 'interactive') {
@@ -57,14 +57,18 @@ org.sriku.Carnot = (function (Carnot) {
         }
     };
 
+    Carnot['findSections'] = findSections;
+    Carnot['scanStyle'] = scanStyle;
+
     // Search for <pre> tags with class "carnot_section",
     // or pre tags which begin with the line - "tala pattern = ..."
     // and don't have class "carnot_ignore".
-    function findCarnotSections() {
-        var explicitSections = GLOBAL.document.querySelectorAll('pre.carnot_section');
+    function findSections(topNode) {
+        topNode = topNode || GLOBAL.document;
+        var explicitSections = topNode.querySelectorAll('pre.carnot_section');
         var sections = Array.prototype.slice.call(explicitSections);
 
-        var allPreTags = GLOBAL.document.querySelectorAll('pre');
+        var allPreTags = topNode.querySelectorAll('pre');
         var i, N, pre;
         for (i = 0, N = allPreTags.length; i < N; ++i) {
             pre = allPreTags[i];
@@ -79,6 +83,18 @@ org.sriku.Carnot = (function (Carnot) {
         }
 
         return sections;
+    }
+
+    function scanStyle(topNode) {
+        topNode = topNode || GLOBAL.document;
+        var style = topNode.querySelector('pre.carnot_style');
+        if (style) {
+            style.hidden = true;
+            style = Parse(style);
+            return style[style.length - 1].properties;
+        } else {
+            return {};
+        }
     }
 
     function renderDocWithStyle() {
