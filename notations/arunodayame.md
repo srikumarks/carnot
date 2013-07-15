@@ -1,8 +1,8 @@
-% arunodayame
+% aruṇōdayamē
 
 <script src="http://sriku.org/lib/carnot/carnot.min.js"></script>
 
-# aruṇōdayamē
+(See the [Markdown source file with the notation](arunodayame.md).)
 
 Varṇam by *Sri Lalgudi G. Jayaraman*  
 in raga *Bauḷi*  
@@ -13,10 +13,19 @@ in tala *Ādi*
 aruṇōdayamē anbin vadivamē  
 annayē nin padam endrum paṇivōm
 
-ar̈umaraigaḷ pōr̈r̈um ādi śakti nī  
+arumar̈aigaḷ pōr̈r̈um ādi śakti nī  
 anbarellām vāzha āḷum dayāpari
 
 karuṇai deivam nīye, kāttaruḷē
+
+
+அருணோதயமே அன்பின் வடிவமே  
+அன்னையே நின் பதம் என்றும் பணிவோம்  
+
+அருமறைகள் போற்றும் ஆதி சக்தி நீ  
+அன்பரெல்லாம் வாழ ஆளும் தயாபரி  
+
+கருணை தெய்வம் நீயே காத்தருளே
 
 ## Pallavi
 
@@ -24,15 +33,24 @@ karuṇai deivam nīye, kāttaruḷē
 	aksharas per line = 16
 	
 	S, r, G, ,, dP r, ,G ,, d, ,P ,, GN dP GP Gr S
-	a ru ṇō _ da ya mē _ an bin _ va di va mē  _
+	அ _ ரு _ ணோ _ _ _ த _ ய _ _ மே _ _ அன் _ பின் _ _ _ வ _ டி _ வ _ மே _ _ _
+	a _ ru _ ṇō _ _ _ da _ ya _ _ mē _ _ an _ bin _ _ _ va _ di _ va _ mē _ _ _ 
 	
 	Sr GP Gr S, ,N d, P, d, S, ,G Pd S+, ,N dP GR S,
+	அன் _ _ _ னை _ யே _ _ _ நின் _ _ _ ப _ தம் _ _ என் _ _ றும் _ _ _ ப _ ணி _ வோம் _
 	an _ _ _ na _ yē _ _ _ nin _ _ _ pa _ dam _ _ en _ _ drum _ _ _ pa _ ṇi _ vōm _
 	
+## Anupallavi
+
+	tala pattern = || ,, ,, ,, ,, | ,, ,, | ,, ,, ||
+	aksharas per line = 16
+	
 	d, P, dN dP Gd Pd Pr ,, rS rG ,P dG ,P d, S+, ,,
-	a _ r̈u _ ma _ rai _ gaḷ _ pō _ _ r̈r̈um _ _ ā _ _ di _ _ śak _ _ ti _ _ nī _ _ _ 
+	அ _ ரு _ ம _ றை _ கள் _ போ _ _ ற்றும் _ _ ஆ _ _ தி _ _ சக் _ _ தி _ _ நீ _ _ _ 
+	a _ ru _ ma _ r̈ai _ gaḷ _ pō _ _ r̈r̈um _ _ ā _ _ di _ _ śak _ _ ti _ _ nī _ _ _ 
 	
 	Pd Pd S+r+ G+, ,P+ r+, ,S+ Nd S+, ,N ,d PG d, ,d PG rS
+	அன் _ ப _ ரெல் _  லாம் _ _ _ வா _ _ ழ _ _ ஆ _ _ ளும் _ த _ _ யா _ _ ப _ ரி _ _
 	an _ ba _ rel _  lām _ _ _ vā _ _ zha _ _ ā _ _ ḷum _ da _ _ yā _ _ pa _ ri _ _
 
 ## Muktayisvaram
@@ -50,7 +68,8 @@ karuṇai deivam nīye, kāttaruḷē
 	aksharas per line = 16
 	
 	G,Pd P,r, ,, GP dS+ ,N d, Nd dP ,, ,, GN dP GP Gr Sr
-	ka ru _ ṇai _ _ dei _ vam _ _ _ _ _ nī _ ye _ _ _ k_ _ āt _ _ _ ta _ ru _ ḷē _
+	க ரு _ ணை _ _ தெய் _ வம் _ _ _ _ _ நீ _ யே _ _ _ _ _ காத் _ _ _ த _ ரு _ ளே _
+	ka ru _ ṇai _ _ dei _ vam _ _ _ _ _ nī _ ye _ _ _ _ _ kāt _ _ _ ta _ ru _ ḷē _
 
 ## Cittasvarams
 
@@ -70,10 +89,10 @@ karuṇai deivam nīye, kāttaruḷē
 	
 	> Fourth
 	S+, ,G GP Pd dS+ ,N dP Gr S, ,r GS rG Pr GP dG Pd
-
+	
 	S+N ,d ,, G, Nd ,P ,, rG dP ,G ,S rG ,S ,r G, ,,
-
+	
 	dP dP ,G Pr G, Nd Nd ,P ,d G, Pd Pd ,S+ ,r+ G+, ,,
-
+	
 	G+r+ ,P+ G+, r+S+ ,r+ ,S+ d, S+N ,d P, d, Pr ,P G, rS ,r
 
