@@ -351,7 +351,9 @@ function RenderSVG(window, paragraphs, style) {
 
     function countAksharasInTala(talaPattern) {
         var commas = talaPattern.match(/,/g);
-        return (commas && commas.length) || 0;
+        var num = (commas && commas.length) || 0;
+        REQUIRE(num > 0, "At least one akshara is required in a tala");
+        return num;
     }
 
     function show(text) {
