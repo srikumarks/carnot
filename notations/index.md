@@ -5,6 +5,7 @@
 - [Sarali varisai](saralivarisai.html)
 - [Jantai varisai](jantai.html)
 - [Alankarams](alankarams.html)
+- [Sthana Dhyanam 1](sthanadhyanam1.html)
 
 ## Compositions
 
