@@ -1,3 +1,5 @@
+<script src="http://sriku.org/lib/carnot/carnot.min.js"></script>
+
 # STHANA DHYANAM 1
 
 *Mela*: Sankarabharanam [2 & 3 intervals]  
