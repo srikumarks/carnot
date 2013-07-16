@@ -134,7 +134,8 @@ function RenderSVG(window, paragraphs, style) {
                 if (i > lastIx) {
                     parts.push(word.substring(lastIx, i));
                 }
-                lastIx = i;
+                lastIx = i + 1;
+                parts.push(c);
             }
         }
         if (i > lastIx) {
