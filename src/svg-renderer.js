@@ -125,6 +125,24 @@ function RenderSVG(window, paragraphs, style) {
         return word.match(/([SrRgGmMPdDnNS][\+\-]*)|[,_]/g) || [];
     }
 
+    function getSyllables(word) {
+        var parts = [];
+        var lastIx, i, N, c;
+        for (i = 0, lastIx = 0, N = word.length; i < N; ++i) {
+            c = word.charAt(i);
+            if (c === ',' || c === '_') {
+                if (i > lastIx) {
+                    parts.push(word.substring(lastIx, i));
+                }
+                lastIx = i;
+            }
+        }
+        if (i > lastIx) {
+            parts.push(word.substring(lastIx, i));
+        }
+        return parts;
+    }
+
     function typesetTimedText(para, line, additionalTextStyle) {
         var tala = para.properties[keyTalaPattern];
         var akshIx = 0, instrIx = 0, tokIx = 0, instr;
@@ -177,12 +195,12 @@ function RenderSVG(window, paragraphs, style) {
                 props.style = textStyle;
                 if (isSvarasthana) {
                     subsvaras = getSubSvaras(line.tokens[tokIx]);
-                    if (subsvaras.length > 2) {
-                        props.style = textStyleBase + fontSize(subsvaras.length * subdivs);
-                    }
+                    props.style = textStyleBase + fontSize((subsvaras.length > 2 ? subsvaras.length : 1) * subdivs);
                     subsvaras.forEach(renderSubsvara);
                 } else {
-                    svgelem(svg, 'text', props, show(line.tokens[tokIx]));
+                    subsvaras = getSyllables(line.tokens[tokIx]);
+                    props.style = textStyleBase + fontSize(subdivs);
+                    subsvaras.forEach(renderSubsvara);
                 }
                 cursor.x += dx;
                 ++subDivIx;
