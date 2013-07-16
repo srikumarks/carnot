@@ -74,13 +74,13 @@ third speed four times.
     S+N dP mP Gm S+N dP mG rS
 
     > Varisai 10
-    Sr Gm P Gm P , P ,
+    Sr Gm P, Gm P, ,, P, ,,
     Gm Pd Nd Pm Gm PG mG rS
-    S+ Nd N dP d Pm P mG
+    S+, Nd N, dP d, Pm P, mG
     Gm Pd Nd Pm Gm PG mG rS
     S+S+ Nd NN dP dd Pm PP mG
     Gm Pd Nd Pm Gm PG mG rS
-    Sr Gr G Gm Pm P dP d
+    Sr Gr G, Gm Pm P, dP d,
     mP dP dN dP mP dP mG rS
     Sr Gr Gm Gm Gm Pm Pd Pd
     S+N dN dP dP mP mG mG rS
