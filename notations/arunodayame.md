@@ -31,7 +31,7 @@ karuṇai deivam nīye, kāttaruḷē
 
 	tala pattern = || ,, ,, ,, ,, | ,, ,, | ,, ,, ||
 	aksharas per line = 16
-	stretch = 2
+	stretch = 1.95
 	stretch space = 0.5
 	
 	GS,,,,,, S,,r _ _ G,,dP,,, G,,,Gr,, ____Gr,, G,,,____ PG,,,,,, d,,,____ _ PG,,mG,, NP,,dP,, mG,,mG,, PG,mS,,r _
@@ -48,7 +48,7 @@ karuṇai deivam nīye, kāttaruḷē
 
 	tala pattern = || ,, ,, ,, ,, | ,, ,, | ,, ,, ||
 	aksharas per line = 16
-	stretch = 2
+	stretch = 1.95
 	stretch space = 0.5
 	
 	G,d, _ dP,,dP,, S+P,,dP,, G,,P P,,d ____G,,, Gr,,____ Sr,,____ ____G,,, ,,G,P,,, P,,,nd,, G,,,____ ,,dP,,,, dP,,S+,,, _             
@@ -65,7 +65,7 @@ karuṇai deivam nīye, kāttaruḷē
 
 	tala pattern = || ,, ,, ,, ,, | ,, ,, | ,, ,, ||
 	aksharas per line = 16
-	stretch = 2
+	stretch = 1.95
 	stretch space = 0.5
 	
 	GS,,____ _ ____dP,, dP,S+S+N,, Pd__ ____mG,, mr,,____ _ _ ____dP,, dP,,S+P,, P,,ddG,, _ _ P,,, ,,dP      
@@ -78,7 +78,7 @@ karuṇai deivam nīye, kāttaruḷē
 
 	tala pattern = || ,, ,, ,, ,, | ,, ,, | ,, ,, ||
 	aksharas per line = 16
-	stretch = 2
+	stretch = 1.95
 	stretch space = 0.5
 	
 	_ _ _ GmGP dP,,dP,, G+S+,,r+S+,, NS+,,P,,, _ _ _ _ _ _ _ _ _
@@ -93,7 +93,7 @@ karuṇai deivam nīye, kāttaruḷē
 
 	tala pattern = || ,, ,, ,, ,, | ,, ,, | ,, ,, ||
 	aksharas per line = 16
-	stretch = 2
+	stretch = 1.95
 	stretch space = 0.5
 	
 	> First
