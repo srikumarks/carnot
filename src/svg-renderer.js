@@ -168,10 +168,15 @@ function RenderSVG(window, paragraphs, style) {
         var stretch = (+para.properties[keyStretch]) * style[keyStretch];
         var stretchSpace = stretch * ((+para.properties[keyStretchSpace]) || style[keyStretchSpace]);
         var textStyleBase = ('font-family:' + (line.type === 'lyrics' ? 'serif' : style[keyNotationFont]) + ';') + (additionalTextStyle || '');
-        var smallFontSize = (+(para.properties[keyNotationSmallFontSize] || style[keyNotationSmallFontSize]));
+        var notationFontSizes = [
+            style[keyNotationFontSize],
+            (+(para.properties[keyNotationSmallFontSize] || style[keyNotationSmallFontSize]))
+            ];
+        notationFontSizes.push(notationFontSizes[1] - (notationFontSizes[0] - notationFontSizes[1]));
+
         var fontSize = function (n) {
 //            return 'font-size:' + Math.max(8,Math.ceil(style[keyNotationFontSize]/Math.log(Math.max(1,n)))) + 'pt;';
-            return 'font-size: ' + (n > 2 ? smallFontSize : style[keyNotationFontSize]) + 'pt;';
+            return 'font-size: ' + notationFontSizes[n > 6 ? 2 : (n > 2 ? 1 : 0)] + 'pt;';
         };
         var textStyle = textStyleBase + fontSize(subdivs);
         var subDivIx = 0;
