@@ -22,6 +22,13 @@
 
 var kSvarasthanaTokenGlobalSearchRE = new RegExp(kSvarasthanaREStr, "g");
 
+var kSvaraOctaveSuffix = {
+    overdot: String.fromCharCode(parseInt("0307", 16)),
+    overddot: String.fromCharCode(parseInt("0308", 16)),
+    underdot: String.fromCharCode(parseInt("0323", 16)),
+    underddot: String.fromCharCode(parseInt("0324", 16))
+};
+
 function RenderSVG(window, paragraphs, style) {
 
     var keyTalaPattern = '$tala pattern';
@@ -206,6 +213,11 @@ function RenderSVG(window, paragraphs, style) {
             props.x += dx / subsvaras.length;
         };
 
+        var renderSubSyllable = function (s) {
+            svgelem(svg, 'text', props, s);
+            props.x += dx / subsvaras.length;
+        };
+
         while (akshIx < para.tala_interval.to) {
             instr = tala.instructions[instrIx];
             if (instr.tick) {
@@ -220,7 +232,7 @@ function RenderSVG(window, paragraphs, style) {
                 } else {
                     subsvaras = getSyllables(line.tokens[tokIx]);
                     props.style = textStyleBase + fontSize(subdivs);
-                    subsvaras.forEach(renderSubsvara);
+                    subsvaras.forEach(renderSubSyllable);
                 }
                 cursor.x += dx;
                 ++subDivIx;
@@ -401,22 +413,30 @@ function RenderSVG(window, paragraphs, style) {
     }
 
     function show(text) {
-        var hisa = "Ṡ";
-        var losa = "Ṣ";
-
         if (text === '_') {
             return "";
         } 
 
-        if (text.length === 2 && text[1] === '+') {
-            return text[0] + hisa[1];
-        } 
-
-        if (text.length === 2 && text[1] === '-') {
-            return text[0] + losa[1];
+        switch (text.length) {
+            case 3: 
+                if (text[1] === '+' && text[2] === '+') {
+                    return text[0] + kSvaraOctaveSuffix.overddot;
+                } else if (text[1] === '-' && text[2] === '-') {
+                    return text[0] + kSvaraOctaveSuffix.underddot;
+                } else {
+                    return text;
+                }
+            case 2:
+                if (text[1] === '+') {
+                    return text[0] + kSvaraOctaveSuffix.overdot;
+                } else if (text[1] === '-') {
+                    return text[0] + kSvaraOctaveSuffix.underdot;
+                } else {
+                    return text;
+                }
+            default:
+                return text;
         }
-
-        return text;
     }
 
     function svgelem(elem, n, attrs, content) {
