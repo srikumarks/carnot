@@ -37,7 +37,7 @@ karuṇai deivam nīye, kāttaruḷē
 	GS,,,,,, S,,r _ _ G,,dP,,, G,,,Gr,, ____Gr,, G,,,____ PG,,,,,, d,,,____ _ PG,,mG,, NP,,dP,, mG,,mG,, PG,mS,,r _
 	S, r, G, ,, dP r, ,G ,, d, ,P ,, GN dP GP Gr S
 	அ _ ரு _ ணோ _ _ _ த _ ய _ _ மே _ _ அன் _ _ பின் _ _ வ _ டி _ வ _ மே _ _ _
-	a _ ru _ ṇō _ _ _ da _ ya _ _ mē _ _ an _ bin _ _ _ va _ di _ va _ mē _ _ _ 
+	a _ ru _ ṇō _ _ _ da _ ya _ _ mē _ _ an _ _ bin _ _ va _ di _ va _ mē _ _ _ 
 	
 	____Sr,,   SG,,gP,,   G,,m____     rSN-S____ ____SN-,, SP-,,,,,,   d-P-,,,,,,    _ _ ____PG,, _ dS+,,____    ____NS+,,    Pd__    G,,mS,,r _    
 	Sr GP Gr S, ,N d, P, d, S, ,G Pd S+, ,N dP GR S,
