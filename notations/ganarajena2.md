@@ -99,34 +99,34 @@ One who has the soft feet like flower
     aksharas per line = 14
 
     D P m , mG R S R m P S+ ,D , P
-    a _ ṇi _ mā _ _ _ dhya _ _ shṭ ṭa _ si _ d _ ddhi _ p pra _ de _ _ na _
+    a ṇi mā _ dhya _shṭ ṭa si d ddhi p_pra_ _de _ na
     Pm,, DPD, PmGm , m,Gm R,,g S R m P,,D D,RS+ ,,D, ,nD, ,nP,
     > (Repeat)
 
     PD S+ D P mP mG RS R m P S+ ,D , P
-    a _ ṇi _ mā _ _ _ dhya _ _ shṭ ṭa _ si _ d _ ddhi _ p pra _ de _ _ na _
+    a ṇi mā _ dhya _shṭ ṭa si d ddhi p_pra_ _de _ na
     P,PD R+,S+, S+D,n P m,mP m,mG mRgS R m P,,D D,R+S+ ,,D, ,nD, ,nP,
     > (Repeat)
 
     S+R+ S+N DD PP mP mG RS R m P S+ ,D , P
-    a _ ṇi _ mā _ _ _ dhya _ _ shṭ ṭa _ si _ d _ ddhi _ p pra _ de _ _ na _
+    a ṇi mā _ dhya _shṭ ṭa si d ddhi p_pra_ _de _ na
     NS+R+, S+,NS+ D,PD P,mP m,mP m,Gm RgS, R m P,,D D,R+S+ ,,D, ,nD, ,nP,
     > (Repeat)
 
     m , P , D S+ N D , P D R+ , S+
-    Mā _ _ _ ṇi _ _ _ kya _ ma _ ku _ ṭā _ _ _ di _ dha _ re _ _ _ ṇa _
+    Mā _ ṇi _ kya ma ku ṭā _ di dha re _ ṇa
     PmGm , P , S+D,, S+D,, S+,NS+ D,,N D,,N P nD,, nD,, g+R+,, g+S+,,
 
     S+ m P , D S+ N D , P D R+ , S+
-    Mā _ _ _ ṇi _ _ _ kya _ ma _ ku _ ṭā _ _ _ di _ dha _ re _ _ _ ṇa _
+    Mā _ ṇi _ kya ma ku ṭā _ di dha re _ ṇa
     S+ m P , S+D,, S+D,, S+,NS+ D,,N D,,N P nD,, nD,, g+R+,, g+S+,,
 
     R+ , m+G+ R+ , S+ , N D m P D , R+
-    Man _ _ _ tri _ ṇi _ _ _ pū _ _ _ ji _ ta _ su _ mu _ khe _ _ _ na _
+    Man _ tri ṇi _ pū _ ji ta su mu khe _ na
     R+,g+R+ g+R+,, m,Gm m+R+,, g+R+,g+ DS+,, , S+,NS+ S+D,, Dm,, P nD,, , nD,R+
 
     S+ , N D ,P m P D ,P , mP mG R S
-    mā _ _ _ ni _ ta _ _ gu ru _ gu _ ha _ _ van _ _ di _ te _ _ _ na _
+    mā _ ni ta _gu ru gu ha _van _ di te _ na
     S+ , S+N,, S+D,, ,P m P nD,, nD,S+ DP,, m,,P m,Gm mR,, GS,,
     > (Repeat last two lines)
 
@@ -136,7 +136,7 @@ One who has the soft feet like flower
     aksharas per line = 14
 
     SR mG R, SD P, ,m GR DD P, mP S+N D, DR+ ,S+
-    di na ka ra ko _ Ti pra kā _ _ śe _ na vi na tā _ śru ta  man _ dā _ re _ _ ṇa
+    di na ka ra ko _ ṭi pra kā _ _ śe _ na vi na tā _ śru ta  man _ dā _ re _ _ ṇa
     SR m,Gm RgRg SSnD ,nP, ,m GmR, SnDn P GPGP DS+NS+ DnDn DnDg+ R+,gS+
     > (Repeat)
 
@@ -164,5 +164,4 @@ One who has the soft feet like flower
     g+R+mG m+R+g+R+ S+,S+R+ S+,S+R+ S+,NS+ DnP, GPGP DnDR+ S+,NS+ DnP, DnDS+ DnP, m,Gm RgRg
     > (Repeat last two lines)
     > (Back to Pallavi)
-
 
