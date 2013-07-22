@@ -36,7 +36,7 @@ karuṇai deivam nīye, kāttaruḷē
 	
 	GS,,,,,, S,,r _ _ G,,dP,,, G,,,Gr,, ____Gr,, G,,,____ PG,,,,,, d,,,____ _ PG,,mG,, NP,,dP,, mG,,mG,, PG,mS,,r _
 	S, r, G, ,, dP r, ,G ,, d, ,P ,, GN dP GP Gr S
-	அ _ ரு _ ணோ _ _ _ த _ ய _ _ மே _ _ அன் _ பின் _ _ _ வ _ டி _ வ _ மே _ _ _
+	அ _ ரு _ ணோ _ _ _ த _ ய _ _ மே _ _ அன் _ _ பின் _ _ வ _ டி _ வ _ மே _ _ _
 	a _ ru _ ṇō _ _ _ da _ ya _ _ mē _ _ an _ bin _ _ _ va _ di _ va _ mē _ _ _ 
 	
 	____Sr,,   SG,,gP,,   G,,m____     rSN-S____ ____SN-,, SP-,,,,,,   d-P-,,,,,,    _ _ ____PG,, _ dS+,,____    ____NS+,,    Pd__    G,,mS,,r _    
@@ -106,7 +106,7 @@ karuṇai deivam nīye, kāttaruḷē
 	GP ,d PG Pr GP ,S rG rG dP ,d S+N dP GP ,d- P-d- Sr
 	
 	> Third
-	GS,,____ ____PG,, PG,m____ PG,,____ dP,,Nd,, S+N,,Pd,, dS,,____ _ dP,,dP,, PG,,G,,P Pr,,____ ____P,,d _ _ _ _
+	GS,,____ ____PG,, PG,m____ PG,,____ dP,,Nd,, S+N,,Pd,, dS+,,____ _ dP,,dP,, PG,,G,,P Pr,,____ ____P,,d _ _ _ _
 	Sr GP Gr GP dS+ Nd Sr GP dP GP rG Nd Pd GP dS+ r+G+
 	
 	G+,,P+P+G+,m+ S+,,r+____ S+,,NP,d, ____PG,, G,,,G+S+,r+ ____S+,,N Pd__ mG,m____ _ _ rG,,____ _ G,P,Pr,, ____P,,d P,,ddG,, ____dP,,
