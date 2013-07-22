@@ -313,14 +313,20 @@ function RenderSVG(window, paragraphs, style) {
             para.lines.forEach(function (line) {
                 if (line.type !== 'text') {
                     if (line.tokens.length < paraAksharas) {
-                        ASSERT(aksh % line.tokens.length === 0);
-                        var i, j, M, N, newTokens = [];
-                        M = aksh / line.tokens.length;
+                        //ASSERT(aksh % line.tokens.length === 0);
+                        var i, j, M, E, N, newTokens = [];
+                        M = Math.floor(aksh / line.tokens.length);
+                        E = Math.round(aksh - M * line.tokens.length); 
+                                // Insert additional gaps so that we 
+                                // render something instead of giving up.
                         for (i = 0, N = line.tokens.length; i < N; ++i) {
                             newTokens.push(line.tokens[i]);
                             for (j = 1; j < M; ++j) {
                                 newTokens.push('_');
                             }
+                        }
+                        for (i = 0; i < E; ++i) {
+                            newTokens.push('_');
                         }
                         line.tokens = newTokens;
                     }
