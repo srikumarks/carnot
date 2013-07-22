@@ -19,6 +19,9 @@
  * line extension bottom = 5
  *
  */
+
+var kSvarasthanaTokenGlobalSearchRE = new RegExp(kSvarasthanaREStr, "g");
+
 function RenderSVG(window, paragraphs, style) {
 
     var keyTalaPattern = '$tala pattern';
@@ -122,7 +125,7 @@ function RenderSVG(window, paragraphs, style) {
     }
 
     function getSubSvaras(word) {
-        return word.match(/([SrRgGmMPdDnNS][\+\-]*)|[,_]/g) || [];
+        return word.match(kSvarasthanaTokenGlobalSearchRE) || [];
     }
 
     function getSyllables(word) {
