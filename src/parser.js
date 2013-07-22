@@ -26,16 +26,7 @@ line.tokens = [string]
  
 */
 
-var kSvaraSuffixes = {
-    overdot: "\\u0307",
-    overddot: "\\u0308",
-    underdot: "\\u0323",
-    underddot: "\\u0324"
-};
-
-var kSpecialOctaveSuffixStr = Object.keys(kSvaraSuffixes).map(function (k) { return kSvaraSuffixes[k]; }).join('');
-
-var kSvarasthanaREStr = '([SrRgGmMPdDnN][' + kSpecialOctaveSuffixStr + '\\+\\-]*)|[,_]';
+var kSvarasthanaREStr = '([SrRgGmMPdDnN][\\+\\-]*)|[,_]';
 var kSvarasthanaTokenREStr = '(' + kSvarasthanaREStr + ')+';
 var kSvarasthanaLineTokenRE = new RegExp('^' + kSvarasthanaTokenREStr + '$');
 
