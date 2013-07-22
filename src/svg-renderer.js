@@ -209,12 +209,12 @@ function RenderSVG(window, paragraphs, style) {
         props = {x: cursor.x, y: cursor.y, style: textStyle};
 
         var renderSubsvara = function (s) {
-            svgelem(svg, 'text', props, show(s));
+            svgelem(svg, 'text', props, showSvara(s));
             props.x += dx / subsvaras.length;
         };
 
         var renderSubSyllable = function (s) {
-            svgelem(svg, 'text', props, s);
+            svgelem(svg, 'text', props, showSyllable(s));
             props.x += dx / subsvaras.length;
         };
 
@@ -412,7 +412,7 @@ function RenderSVG(window, paragraphs, style) {
         return num;
     }
 
-    function show(text) {
+    function showSvara(text) {
         if (text === '_') {
             return "";
         } 
@@ -436,6 +436,14 @@ function RenderSVG(window, paragraphs, style) {
                 }
             default:
                 return text;
+        }
+    }
+    
+    function showSyllable(text) {
+        if (text === '_') {
+            return "";
+        } else {
+            return text;
         }
     }
 
