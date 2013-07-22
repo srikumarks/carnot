@@ -52,13 +52,26 @@ function RenderSVG(window, paragraphs, style) {
     processTalaPatterns(paragraphs);
 
     var div = window.document.createElement('div');
-    var svg = window.document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    div.insertBefore(svg, null);
-    
-    paragraphs.forEach(typesetPara);
+    var svgns = 'http://www.w3.org/2000/svg';
+    var svg;
+    var commitSVG = function (makeNew) {
+        if (svg) {
+            svg.setAttribute('width', cursor.xmax);
+            svg.setAttribute('height', cursor.ymax);
+            div.style.width = ''+cursor.xmax+'px';
+        }
+        if (makeNew) {
+            svg = window.document.createElementNS(svgns, 'svg');
+            div.appendChild(svg);
+            cursor.y = style[keyMarginTop];
+            cursor.x = style[keyMarginLeft];
+            cursor.xmax = 0;
+            cursor.ymax = 0;
+        }
+    };
 
-    svg.setAttribute('width', cursor.xmax);
-    svg.setAttribute('height', cursor.ymax);
+    commitSVG(true);
+    paragraphs.forEach(typesetPara);
 
     function extendLine(ix, x, fromY, toY) {
         var l = pendingLines[ix];
@@ -91,9 +104,7 @@ function RenderSVG(window, paragraphs, style) {
         if (para.lines) {
             para.lines.forEach(function (line) { typesetLine(para, line); });
             flushLines();
-            if (i + 1 < paragraphs.length) {
-                nextLine(keyParaSpacing);
-            }
+            commitSVG(i + 1 < paragraphs.length);
         }
     }
 
@@ -433,5 +444,5 @@ function RenderSVG(window, paragraphs, style) {
         style[keyLineExtensionBottom] = (+style[keyLineExtensionBottom]) || 5;
     }
 
-    return svg;
+    return div;
 }
