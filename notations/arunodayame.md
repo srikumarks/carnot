@@ -129,5 +129,5 @@ karuṇai deivam nīye, kāttaruḷē
 	
 	G+,,P+P+r+,, ____r+S+,, P+G+,,P+G+,m+ S+,,r+____ ____Pr+,, _ S+Nd,____ PS+,,S+,, NS+,,Pd,, _ Gd,,____ ____Gr,, ____rS,, PG,,PG,m S,,r____ ____Sr,,              
 	P+r+ ,P+ G+, r+S+ ,r+ ,S+ d, S+N ,d P, d, Pr ,P G, rS ,r
-	phrases = (___)(______)(_____)(______)(___)(__)(___)(____)
+	phrases = (___)(______)(_____)(______)(_____)(______)_
 
