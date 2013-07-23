@@ -108,21 +108,26 @@ karuṇai deivam nīye, kāttaruḷē
 	> Third
 	GS,,____ ____PG,, PG,m____ PG,,____ dP,,Nd,, S+N,,Pd,, dS+,,____ _ dP,,dP,, PG,,G,,P Pr,,____ ____P,,d _ _ _ _
 	Sr GP Gr GP dS+ Nd Sr GP dP GP rG Nd Pd GP dS+ r+G+
-	phrases = (______)(______)(____)(______)(____)(______)
+	phrases = (___)(___)(___)(___)(____)(______)(____)(______)
 	
 	G+,,P+P+G+,m+ S+,,r+____ S+,,NP,d, ____PG,, G,,,G+S+,r+ ____S+,,N Pd__ mG,m____ _ _ rG,,____ _ G,P,Pr,, ____P,,d P,,ddG,, ____dP,,
 	P+G+ r+S+ Nd PG G+r+ S+N dP Gr+ S+N dP GS+ Nd PG Nd PG dP
+	phrases = (________)(_______)(______)(_____)(____)(__)
 	
 	> Fourth
 	P,,,S+,,, ____SG,, gG,,G,P, __dP dPdP S+,,,S+,,N Pd__ mG,m____ _ _ rG,,____ _ G,P,Pr,, ____P,,d P,,ddG,, ____dP,,
 	S+, ,G GP Pd dS+ ,N dP Gr S, ,r GS rG Pr GP dG Pd
+    phrases = ___(__)(__)(__)(___)(____)___(____)(____)(_____)
 	
 	PS+,,S+,,, ____NS+d, _ _ G,,NPNd, ____d,,, P,,,____ _ G,d,PdP, ____P,,, G,,,rS,, _ ____rS,, _ Gr,,G,,, _
 	S+N ,d ,, G, Nd ,P ,, rG dP ,G ,S rG ,S ,r G, ,,
+    phrases = (____)____(____)__(______)____________
 	
 	Gd,,____ _ _ G,P,Pr,, _ P,,NP,,d P,,NNd,, _ ____P,,d _ __Pd _ _ ____r+S+,, G+r+,,G+,,, _
 	dP dP ,G Pr G, Nd Nd ,P ,d G, Pd Pd ,S+ ,r+ G+, ,,
+    phrases = (_____)(_____)(_____)(_____)(_____)(_______)
 	
 	G+,,P+P+r+,, ____r+S+,, P+G+,,P+G+,m+ S+,,r+____ ____Pr+,, _ S+Nd,____ PS+,,S+,, NS+,,Pd,, _ Gd,,____ ____Gr,, ____rS,, PG,,PG,m S,,r____ ____Sr,,              
 	P+r+ ,P+ G+, r+S+ ,r+ ,S+ d, S+N ,d P, d, Pr ,P G, rS ,r
+    phrases = (___)(______)(_____)(______)(___)(__)(___)(____)
 
