@@ -137,14 +137,19 @@ function RenderSVG(window, paragraphs, style) {
     }
 
     function renderPhraseGroupCurve(curve) {
-        var ctrlx = (curve.x1 + curve.x2) / 2;
-        var ctrly = curve.y1 + 30;
+        var x2 = curve.x2 - 0.5 * curve.dx;
+        var ctrlx = (curve.x1 + x2) / 2;
+            ///< Phrase curves: Made it such that adjacent curves don't touch, which
+            ///< doesn't look nice. You can control this by using an appropriate number 
+            ///< of subdivisions.
+
+        var ctrly = curve.y1 + Math.min(100, 5 + 0.125 * (x2 - curve.x1));
         svgelem(svg, 'path', {
             d: [    
                 'M' + curve.x1 + ',' + curve.y1,
                 'Q' + ctrlx + ',' + ctrly,
-                '' + curve.x2 + ',' + curve.y2,
-                'Q' + ctrlx + ',' + (ctrly + 5),
+                '' + x2 + ',' + curve.y2,
+                'Q' + ctrlx + ',' + (ctrly + 3),
                 '' + curve.x1 + ',' + curve.y1
             ].join(' '),
             'stroke-linejoin': 'round',
@@ -203,7 +208,7 @@ function RenderSVG(window, paragraphs, style) {
                         ++tokIx;
                         break;
                     case '(':
-                        curves.push({x1: cursor.x, y1: cursor.y});
+                        curves.push({dx: dx, x1: cursor.x, y1: cursor.y});
                         ++tokIx;
                         continue;
                     case ')':
