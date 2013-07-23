@@ -91,21 +91,34 @@ karuṇai deivam nīye, kāttaruḷē
 
 ## Cittasvarams
 
+### First
+
 	tala pattern = || ,, ,, ,, ,, | ,, ,, | ,, ,, ||
 	aksharas per line = 16
 	stretch = 1.95
 	stretch space = 0.5
 	
-	> First
 	_ _ _ P,,,,,,, ,,,,dP,, _ ____Gr,, _ Gr,,G,,, __PG P,,, _ mG,,PG,, rS__ ____S,,, ,,r,,,,,,
 	G, ,P ,, d, ,, ,P ,r ,, G, ,P ,, ,, G, S, ,r ,,
 	
-	> Second
+### Second
+
+	tala pattern = || ,, ,, ,, ,, | ,, ,, | ,, ,, ||
+	aksharas per line = 16
+	stretch = 1.95
+	stretch space = 0.5
+	
 	PG,,PG,P _ _ _ G,,PG,P, _ _ _ _ _ _ _ _ _ _ _
 	_ __Pd _ GP,,Pr,, G,,,PG,P _ ____mG,m _ mG,dP,,, ____dP,, dPS+S+N,, NP,,dP,, PG,,PG,S _ _ _
 	GP ,d PG Pr GP ,S rG rG dP ,d S+N dP GP ,d- P-d- Sr
-	
-	> Third
+
+### Third
+
+	tala pattern = || ,, ,, ,, ,, | ,, ,, | ,, ,, ||
+	aksharas per line = 16
+	stretch = 1.95
+	stretch space = 0.5
+
 	GS,,____ ____PG,, PG,m____ PG,,____ dP,,Nd,, S+N,,Pd,, dS+,,____ _ dP,,dP,, PG,,G,,P Pr,,____ ____P,,d _ _ _ _
 	Sr GP Gr GP dS+ Nd Sr GP dP GP rG Nd Pd GP dS+ r+G+
 	phrases = (___)(___)(___)(___)(____)(______)(____)(______)
@@ -113,8 +126,14 @@ karuṇai deivam nīye, kāttaruḷē
 	G+,,P+P+G+,m+ S+,,r+____ S+,,NP,d, ____PG,, G,,,G+S+,r+ ____S+,,N Pd__ mG,m____ _ _ rG,,____ _ G,P,Pr,, ____P,,d P,,ddG,, ____dP,,
 	P+G+ r+S+ Nd PG G+r+ S+N dP Gr+ S+N dP GS+ Nd PG Nd PG dP
 	phrases = (________)(_______)(______)(_____)(____)(__)
-	
-	> Fourth
+
+### Fourth
+
+	tala pattern = || ,, ,, ,, ,, | ,, ,, | ,, ,, ||
+	aksharas per line = 16
+	stretch = 1.95
+	stretch space = 0.5
+
 	P,,,S+,,, ____SG,, gG,,G,P, __dP dPdP S+,,,S+,,N Pd__ mG,m____ _ _ rG,,____ _ G,P,Pr,, ____P,,d P,,ddG,, ____dP,,
 	S+, ,G GP Pd dS+ ,N dP Gr S, ,r GS rG Pr GP dG Pd
 	phrases = ___(__)(__)(__)(___)(____)___(____)(____)(_____)
