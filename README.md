@@ -137,6 +137,23 @@ Example:
 The value of this property is expected to be a natural number greater than 0.
 It specifies how many of the tala aksharas a line should occupy. 
 
+### phrases
+
+If a property with the key `phrases` is attached to a "paragraph", it is
+taken to provide information about how to group svaras for that paragraph
+into phrases. The syntax of the value is simple - it consists of a sequence
+of `_` characters some of which are grouped using `(` and `)` to indicate
+that they belong to a phrase. For this property, spaces don't matter at all.
+Here is an example ([rendered](http://sriku.org/notations/phrase-sample.html))-
+
+    tala pattern = || , , | , , , , ||
+    aksharas per line = 7
+    stretch = 1.5
+    stretch space = 0.5
+
+    SrGm GrrG mPmG GmPd PmNd S+NG+r+ S+
+    phrases = (______) (______) (______) (__) (__) (__) _____
+
 ### stretch
 
 Give a floating point value that will horizontally stretch the spacing used in
