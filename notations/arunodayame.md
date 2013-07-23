@@ -108,6 +108,7 @@ karuṇai deivam nīye, kāttaruḷē
 	> Third
 	GS,,____ ____PG,, PG,m____ PG,,____ dP,,Nd,, S+N,,Pd,, dS+,,____ _ dP,,dP,, PG,,G,,P Pr,,____ ____P,,d _ _ _ _
 	Sr GP Gr GP dS+ Nd Sr GP dP GP rG Nd Pd GP dS+ r+G+
+	phrases = (______)(______)(____)(______)(____)(______)
 	
 	G+,,P+P+G+,m+ S+,,r+____ S+,,NP,d, ____PG,, G,,,G+S+,r+ ____S+,,N Pd__ mG,m____ _ _ rG,,____ _ G,P,Pr,, ____P,,d P,,ddG,, ____dP,,
 	P+G+ r+S+ Nd PG G+r+ S+N dP Gr+ S+N dP GS+ Nd PG Nd PG dP

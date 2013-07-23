@@ -21,6 +21,7 @@
  */
 
 var kSvarasthanaTokenGlobalSearchRE = new RegExp(kSvarasthanaREStr, "g");
+var kPhraseGroupingsRE = /([_]|\([_]+\))+/;
 
 var kSvaraOctaveSuffix = {
     overdot: String.fromCharCode(parseInt("0307", 16)),
@@ -33,6 +34,7 @@ function RenderSVG(window, paragraphs, style) {
 
     var keyTalaPattern = '$tala pattern';
     var keyAksharasPerLine = '$aksharas per line';
+    var keyPhrases = '$phrases';
     var keyAksharas = '$aksharas';
     var keyLineSpacing = '$line spacing';
     var keyParaSpacing = '$para spacing';
@@ -110,7 +112,9 @@ function RenderSVG(window, paragraphs, style) {
     function typesetPara(para, i) {
         if (para.lines) {
             para.lines.forEach(function (line) { typesetLine(para, line); });
+            typesetPhraseGroupCurves(para);
             flushLines();
+
             commitSVG(i + 1 < paragraphs.length);
         }
     }
@@ -130,6 +134,137 @@ function RenderSVG(window, paragraphs, style) {
             default:
                 throw new Error('Unknown line type ' + line.type);
         }
+    }
+
+    function renderPhraseGroupCurve(curve) {
+        var ctrlx = (curve.x1 + curve.x2) / 2;
+        var ctrly = curve.y1 + 30;
+        svgelem(svg, 'path', {
+            d: [    
+                'M' + curve.x1 + ',' + curve.y1,
+                'Q' + ctrlx + ',' + ctrly,
+                '' + curve.x2 + ',' + curve.y2,
+                'Q' + ctrlx + ',' + (ctrly + 5),
+                '' + curve.x1 + ',' + curve.y1
+            ].join(' '),
+            'stroke-linejoin': 'round',
+            'stroke-width': '0.5',
+            stroke: 'black',
+            fill: 'black'
+        });
+        cursor.xmax = Math.max(cursor.xmax, curve.x2);
+        cursor.ymax = Math.max(cursor.ymax, ctrly);
+    }
+
+    function typesetPhraseGroupCurves(para) {
+        if (!(keyPhrases in para.properties)) {
+            return;
+        }
+
+        var phrasesStr = para.properties[keyPhrases].split(/\s/).join('');
+        if (!kPhraseGroupingsRE.test(phrasesStr)) {
+            throw new Error('Bad phrase groupings syntax: ' + phrasesStr);
+        }
+        var length = phrasesStr.match(/[_]/g).length;
+
+        var tala = para.properties[keyTalaPattern];
+        var akshIx = 0, instrIx = 0, tokIx = 0, subDivIx = 0, instr;
+
+        // Skip aksharas until start
+        while (akshIx < para.tala_interval.from) {
+            if (tala.instructions[instrIx].tick) {
+                akshIx++;
+            }
+            instrIx++;
+        }
+
+        // Skip all spaces
+        while (instrIx < tala.instructions.length && tala.instructions[instrIx].space) {
+            ++instrIx;
+        }
+
+        var givenAksharas = +(para.properties[keyAksharas] || para.properties[keyAksharasPerLine]);
+        var startAkshIx = akshIx;
+        var startInstrIx = instrIx;
+        var subdivs = length / givenAksharas;
+        var stretch = (+para.properties[keyStretch]) * style[keyStretch];
+        var stretchSpace = stretch * ((+para.properties[keyStretchSpace]) || style[keyStretchSpace]);
+        var curves = [];
+        var dy = 0.75 * style[keyLineSpacing];
+        cursor.y -= dy;
+
+        while (akshIx < para.tala_interval.to) {
+            instr = tala.instructions[instrIx];
+            if (instr.tick) {
+                dx = instr.tick * stretch / subdivs;
+                switch (phrasesStr[tokIx]) {
+                    case '_':
+                        cursor.x += dx;
+                        ++tokIx;
+                        break;
+                    case '(':
+                        curves.push({x1: cursor.x, y1: cursor.y});
+                        ++tokIx;
+                        continue;
+                    case ')':
+                        curves[curves.length-1].x2 = cursor.x;
+                        curves[curves.length-1].y2 = cursor.y;
+                        ++tokIx;
+                        continue;
+                    default:
+                        ASSERT(false, "Branch should be unreachable");
+                }
+
+                ++subDivIx;
+                if (subDivIx >= subdivs) {
+                    subDivIx = 0;
+                    ++akshIx;
+                    ++instrIx;
+                } else {
+                    continue;
+                }
+            } 
+
+            if (tokIx < phrasesStr.length && phrasesStr[tokIx] === ')') {
+                curves[curves.length-1].x2 = cursor.x;
+                curves[curves.length-1].y2 = cursor.y;
+                ++tokIx;
+            }
+
+            // Consume other non-tick instructions up to the next tick.
+            while (instrIx < tala.instructions.length && (instr = tala.instructions[instrIx], !instr.tick)) {
+                if (instr.space) {
+                    if (instr.scale) {
+                        cursor.x += instr.space * stretchSpace;
+                    } else {
+                        cursor.x += instr.space;
+                    }
+                } else if (instr.line) {
+                    if (instr.draw) {
+                        extendLine(instrIx, 
+                                cursor.x, 
+                                cursor.y - style[keyLineSpacing] - style[keyLineExtensionTop] + dy,
+                                cursor.y + style[keyLineExtensionBottom]);
+                    }
+                    cursor.x += instr.line;
+                }
+                instr = tala.instructions[++instrIx];
+            }
+        }
+
+        if (tokIx < phrasesStr.length) {
+            // Pending close bracket.
+            ASSERT(phrasesStr[tokIx] === ')');
+            curves[curves.length-1].x2 = cursor.x;
+            curves[curves.length-1].y2 = cursor.y;
+            ++tokIx;
+        }
+
+        ASSERT(tokIx === phrasesStr.length);
+
+        // Render the phrase group curves.
+        curves.forEach(renderPhraseGroupCurve);
+        cursor.y = cursor.ymax;
     }
 
     function typesetText(para, line) {
