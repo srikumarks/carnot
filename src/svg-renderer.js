@@ -166,7 +166,7 @@ function RenderSVG(window, paragraphs, style) {
             return;
         }
 
-        var phrasesStr = para.properties[keyPhrases].split(/\s/).join('');
+        var phrasesStr = para.properties[keyPhrases].replace(/\s/g, '');
         if (!kPhraseGroupingsRE.test(phrasesStr)) {
             throw new Error('Bad phrase groupings syntax: ' + phrasesStr);
         }
