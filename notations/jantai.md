@@ -17,6 +17,7 @@ stretch space = 0.75
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
+    stretch = 1.5
     
     S S r r G G m m 
     P P d d N N S+ S+
@@ -32,6 +33,12 @@ stretch space = 0.75
     SSrr GGmm PPdd NNS+S+ S+S+NN ddPP mmGG rrSS
     SSrr GGmm PPdd NNS+S+ S+S+NN ddPP mmGG rrSS
     SSrr GGmm PPdd NNS+S+ S+S+NN ddPP mmGG rrSS
+    
+    SSrrGGmm PPddNNS+S+ S+S+NNddPP mmGGrrSS SSrrGGmm PPddNNS+S+ S+S+NNddPP mmGGrrSS
+    SSrrGGmm PPddNNS+S+ S+S+NNddPP mmGGrrSS SSrrGGmm PPddNNS+S+ S+S+NNddPP mmGGrrSS
+    SSrrGGmm PPddNNS+S+ S+S+NNddPP mmGGrrSS SSrrGGmm PPddNNS+S+ S+S+NNddPP mmGGrrSS
+    SSrrGGmm PPddNNS+S+ S+S+NNddPP mmGGrrSS SSrrGGmm PPddNNS+S+ S+S+NNddPP mmGGrrSS
+
     
 ## Jantai 2
 
