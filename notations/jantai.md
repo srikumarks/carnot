@@ -13,7 +13,7 @@ stretch = 1.25
 stretch space = 0.75
 </pre>
 
-## Jantai 1
+## Jantai
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
@@ -40,7 +40,7 @@ stretch space = 0.75
     SSrrGGmm PPddNNS+S+ S+S+NNddPP mmGGrrSS SSrrGGmm PPddNNS+S+ S+S+NNddPP mmGGrrSS
 
     
-## Jantai 2
+## Jantai varisai 1
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
@@ -51,7 +51,7 @@ stretch space = 0.75
     NN dd PP mm DD PP mm GG
     PP mm GG RR mm GG RR SS
     
-## Jantai 3
+## Jantai varisai 2
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
@@ -61,7 +61,7 @@ stretch space = 0.75
     S+, S+S+ N, NN d, dd P, PP
     m, mm G, GG r, rr S, SS
 
-## Jantai 4
+## Jantai varisai 3
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
@@ -78,7 +78,7 @@ stretch space = 0.75
     P, PP m, mm G, GG r, rr
     m, mm G, GG r, rr S, SS
 
-## Jantai 5
+## Jantai varisai 4
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
@@ -88,7 +88,7 @@ stretch space = 0.75
     S+S+ S+S+ NN NN dd dd PP PP
     mm mm GG GG rr rr SS SS
     
-## Jantai 6
+## Jantai varisai 5
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
@@ -105,7 +105,7 @@ stretch space = 0.75
     PP PP mm mm GG GG rr rr
     mm mm GG GG rr rr SS SS
     
-## Jantai 7
+## Jantai varisai 6
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
@@ -122,7 +122,7 @@ stretch space = 0.75
     PP mm GP mG PP mm GG rr
     mm GG rm Gr mm GG rr SS
 
-## Jantai 8
+## Jantai varisai 7
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
@@ -139,7 +139,7 @@ stretch space = 0.75
     P, Pm ,m GG PP mm GG rr
     m, mG ,G rr mm GG rr SS
 
-## Jantai 9
+## Jantai varisai 8
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
@@ -156,7 +156,7 @@ stretch space = 0.75
     PP Pm mm GG PP mm GG rr
     mm mG GG rr mm GG rr SS
 
-## Jantai 10
+## Jantai varisai 9
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
@@ -173,7 +173,7 @@ stretch space = 0.75
     Pm mG mG Gr PP mm GG rr
     mG Gr Gr rS mm GG rr SS
 
-## Jantai 11
+## Jantai varisai 10
 
     tala pattern = || , , , , | , , | , , ||
     aksharas per line = 8
