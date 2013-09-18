@@ -1,9 +1,10 @@
-
-# Dadhi Vāmana Stotram
+% Dadhi Vāmana Stotram
 
 <script src="http://sriku.org/lib/carnot/carnot.min.js"></script>
 
 (See the [Markdown source file with the notation](ativimala.md).)
+
+## Lyrics
 
 ati vimalasu gātram rukmapātrastam annam  
 sulalita dadhi bandham pāṇinā dakṣiṇena  
