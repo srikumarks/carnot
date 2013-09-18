@@ -2,6 +2,8 @@
 
 <script src="http://sriku.org/lib/carnot/carnot.min.js"></script>
 
+Paper notation provided by Karaikud Dr. Shanthi Mahesh.
+
 (See the [Markdown source file with the notation](ativimala.md).)
 
 ## Lyrics
