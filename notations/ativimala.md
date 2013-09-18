@@ -151,7 +151,7 @@ stretch space = 0.6
     m,D, D,n,
     > (tarati)
     
-## Ending chittasvara
+## Ending chittaisvara
 
 Ragas in backward order ending in khamās.
 
