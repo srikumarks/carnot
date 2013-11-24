@@ -1,4 +1,4 @@
-% Dhruva taala Daatu Alankaram
+% Dhruva tala Daatu Alankaram
 
 <script src="http://sriku.org/lib/carnot/carnot.min.js"></script>
 
@@ -12,6 +12,7 @@ See the [Markdown source file with the notation](dhruva-daatu-alankara.md).
 
     tala pattern = || , , , , | , , | , , , , | , , , , ||
     aksharas per line = 14
+    stretch = 0.5
 
     S  r  S  G  r  G  S  m  G  m  r  G  S  r
 
@@ -29,6 +30,7 @@ See the [Markdown source file with the notation](dhruva-daatu-alankara.md).
 
     tala pattern = || , , , , | , , | , , , , | , , , , ||
     aksharas per line = 14
+    stretch = 0.5
 
     S+ N  S+ d  N  d  S+ P  d  P  N  d  S+ N
 

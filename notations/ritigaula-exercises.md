@@ -45,5 +45,6 @@ See the [Markdown source file with the notation](ritigaula-exercises.md).
 
     n D m g m g R g R S S , g g m g m P m m
 
-    g g m g R g R S , ,
+    aksharas per line = 10
+    g g m g R g R S , , 
 
