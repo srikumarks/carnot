@@ -14,3 +14,7 @@
 - [Arunodayame](arunodayame.html)
 - [Ativimala](ativimala.html)
 
+## Dr.KSS exercises
+
+- [Ritigaula](ritigaula-exercises.html)
+- [Dhruva daatu alankaram](dhruva-daatu-alankara.html)
